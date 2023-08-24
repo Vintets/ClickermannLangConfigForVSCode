@@ -1,0 +1,53 @@
+{
+    "name": "clickermann",
+    "displayName": "Clickermann",
+    "description": "Автоматизация работы за компьютером. Создание ботов для игр. Пусть компьютер работает за Вас со скриптами Clickermann!",
+    "version": "4.14.3",
+    "homepage": "http://crapware.aidf.org",
+    "engines": {
+        "vscode": "^1.9.0"
+    },
+    "publisher": "Vintets",
+    "author": {
+        "name": "Vintets",
+        "email": "admin@vintets.ru"
+    },
+    "icon": "images/Clickermann_icon_48x.png",
+    "keywords": [
+        "clickermann",
+        "autoclicker"
+    ],
+    "categories": [
+        "Programming Languages",
+        "Formatters",
+        "Other"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "clickermann",
+            "aliases": ["Clickermann", "CM", "Cmann"],
+            "extensions": [".cms"],
+            "filenames": [],
+            "configuration": "./clickermann.configuration.json",
+            "icon": {
+                "light": "./images/Clickermann-v4_Mainicon.svg",
+                "dark": "./images/Clickermann-v4_Mainicon.svg"
+            }
+        }],
+        "iconThemes": [{
+            "id": "clickermann",
+            "label": "Clickermann",
+            "path": "./fileicons/clickermann-icon-theme.json"
+        }],
+        "grammars": [{
+            "language": "clickermann",
+            "scopeName": "code.cms",
+            "path": "./syntaxes/clickermann.tmLanguage"
+        }]
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/"
+    }
+}

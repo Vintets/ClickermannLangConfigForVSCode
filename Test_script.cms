@@ -1,0 +1,250 @@
+﻿2017-04-17 18:38 Hint This should be blue!
+2017-04-17 18:38 Warning This should be amber!
+2017-04-17 18:38 Fail This should be red!
+
+// комментарии
+#name #include #logfile #autorun #ps2_keyboard #ps2_mouse #define #preprocessor
+
+#name "NameScript"
+#include "mylib.cms"
+#logfile "debug.txt"
+#autorun
+#ps2_keyboard
+#ps2_mouse
+#define find:replace
+#preprocessor "debug.dll"
+
+$_xmouse $_ymouse $_xmax $_ymax $_xmin $_ymin $_return1 $_return2 $_cursor $_ms $_time_t $_time_h $_time_m $_time_s $_date_y $_date_m $_date_d $_time_str $_date_str $_hwnd $_hwnd_self $_pdir $_ver_self $_ver_sys $_arch_sys $_param_str
+
+#TRUE #FALSE #NULL #NIL #F1 #F2 #F3 #F4 #F5 #F6 #F7 #F8 #F9 #F10 #F11 #F12 #TAB #BACKSPACE #CTRL #ALT #SHIFT #ENTER #ESC #SPACE #CAPSLOCK #PAGEUP #PAGEDOWN #END #HOME #INSERT #DELETE #LEFT #RIGHT #UP #DOWN #SCROLLLOCK #PRINTSCREEN #NUMLOCK #0 #1 #2 #3 #4 #5 #6 #7 #8 #9 #A #B #C #D #E #F #G #H #I #J #K #L #M #N #O #P #Q #R #S #T #U #V #W #X #Y #Z #WIN #LWIN #RWIN
+
+Логическое И  AND ; &
+Логическое ИЛИ  OR ; |
+Логическое исключающее ИЛИ  XOR ; ^
+
+$var = 3      IF($test = 100)  Android correction & | ^ END   for FOR ELSE
+($a < $b) ($a <= $b) ($a > $b) ($a >= $b)
+($a ! $b) ($a != $b) ($a = $b) ($a == $b)
+
+FOR($i=0, $i < 3)
+END_CYC
+
+WHILE($a != $b)
+END_CYC
+
+IF(($bar == 3) AND ($BAZ >= 1000))
+ELSE
+END_IF
+
+THREAD(name, 1)
+END_THREAD
+
+SUB(имя, $par1, $par2)
+END_SUB
+
+SWITCH($var)
+CASE(1)
+CASE(2)
+DEFAULT
+END_SWITCH
+
+GETSCREEN
+IF_PIXEL_IN(0,0,500,350, 255)
+    LCLICK(400, 220)
+END_IF
+
+GETSCREEN
+IF_PICTURE_IN(0,0,$_xmax,$_ymax, "file.bmp", -1,95)
+    LCLICK($_return1, $_return2)
+END_IF
+
+metka:
+GOTO(metka)
+
+LOGWRITE(0,0, 1250,959)
+$n = (0xABCDEF)
+$t = 5 * 2 + 0x07E2
+
+IF(($xf = 0) AND ($yf < 3) OR (7))
+END_IF
+
+KEYPRESS(#F6)
+KEYPRESS(#SHIFT)
+KEYPRESS(#ENTER)
+
+//Склад камня
+$Store_S_x = $var[12]
+$Store_S_y = $var[$dr + (7 * 2)]
+
+//==============================================================================
+
+
+// блоки
+//FOR WHILE THREAD IF_PIXEL_IN IF_PICTURE_IN IF_TIME SWITCH IF_KEYDOWN IF SUB
+
+//END_CYC END_IF END_THREAD END_SWITCH END_SUB
+
+
+
+// ФАЙЛ КЛЮЧЕВЫХ СЛОВ
+// ВСЕ ОНИ БУДУТ ПОДСВЕЧЕНЫ В РЕДАКТОРЕ
+//--- СИСТЕМНЫЕ
+FOR
+WHILE
+GOTO
+BREAK
+ELSE
+END_CYC
+END_IF
+IF
+IF_TIME
+INC
+WAIT
+WAITMS
+CALL
+AND
+OR
+XOR
+PXL
+PXLXOR
+PXLCRC
+PXLCOUNT
+RND
+RNDFROM
+FROMCLIP
+DIST
+HGETTEXT
+HGET
+SIN
+COS
+ARCSIN
+ARCCOS
+SQRT
+ROUND
+POW
+ABS
+LCLICK
+LDOWN
+LUP
+RCLICK
+RDOWN
+RUP
+MDOWN
+MUP
+MCLICK
+MOVE
+MOVER
+DBLCLICK
+WHEELDOWN
+WHEELUP
+KEYDOWN
+KEYPRESS
+KEYSTRING
+KEYUP
+IF_KEYDOWN
+DEFINE
+GETSCREEN
+COLORMODE
+HALT
+IF_PIXEL_IN
+IF_PICTURE_IN
+LOGCLEAR
+LOGSHOW
+LOGWRITE
+PRINT
+EXECUTE
+SCREENSHOT
+SCREENSHOTEX
+SOUND
+TOCLIP
+TRAYSAY
+UNDEFINE
+LOAD
+SUB
+GOSUB
+END_SUB
+READMEM
+WRITEMEM
+HSET
+HSETTEXT
+STRFILTER
+STRCUT
+STRCUT2
+STRPOS
+STRLEN
+STRCONCAT
+STRREPLACE
+STRREADLN
+STRWRITELN
+STRMD5
+INT
+GETKBLAYOUT
+SETKBLAYOUT
+TFREADARR
+TFWRITEARR
+STRSEPARATE
+THREAD
+SETTHREAD
+END_THREAD
+WNDFIND
+WNDSIZE
+WNDPOS
+WNDSTATE
+WNDGETINFO
+WNDSETINFO
+WNDBUMP
+POSTMESSAGE
+SENDMESSAGE
+COLORGEN
+COLORR
+COLORG
+COLORB
+BEEP
+TFCLEAR
+TFREAD
+TFWRITE
+TFCOUNT
+TFDELETE
+ISKEYDOWN
+INPUTBOX
+HTTPGET
+HTTPPOST
+HINTPOPUP
+INIREAD
+INIWRITE
+SWITCH
+END_SWITCH
+CASE
+DEFAULT
+ARRSIZE
+ARRPUSH
+ARRPOP
+SCANPXL
+SCANPICTURE
+DIALOGBOX
+RADIOBOX
+GETKEYSDOWN
+GETDIRLIST
+GETFILELIST
+SETVAR
+GETVAR
+SCREENSHOTFIX
+PXLREPLACE
+HGETPID
+ARRSORT
+GETMESSAGE
+CHAR
+CODE
+FREADDATA
+FWRITEDATA
+FDELETE
+FCOPY
+FCREATE
+FEXISTS
+FSIZE
+WNDFINDARR
+CONTRAST
+LOGWRITEC
+PRINTC
+CALLARR
+ARRCONCAT

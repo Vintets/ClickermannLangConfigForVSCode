@@ -1,0 +1,68 @@
+{
+    // рабочая папка проекта (глубже чем сам корень проекта)
+    //"terminal.integrated.cwd": "app",
+
+
+    // --- Command Prompt
+    // "terminal.integrated.shellArgs.windows": [
+    //     ""
+    // ],
+
+    // --- Git Bash
+    // "terminal.integrated.shellArgs.windows": ["--cd=C:/Server/data/htdocs/flask_blog/app"]
+    // "terminal.integrated.shellArgs.windows": [
+    // "--cd=C:/Server/data/htdocs/flask_blog/app",
+    // "-c",
+    // "source C:/Server/venv_flask3/Scripts/activate"
+    // "python main.py"
+    // ],
+
+
+    "window.zoomLevel": 0,
+    //"files.autoSaveDelay": 1000,
+    //"files.encoding": "utf8",
+    //"files.eol": "auto",  //  - \n: LF    \r\n: CRLF
+
+    // исключаем файлы и папки
+    "files.exclude": {
+        //".vscode/": true,
+        "logs/": true,
+        "**/*.ico": true,
+        "**/*.bat": true,
+        "**/*.exe": true,
+        "**/*.png": true,
+        "**/*.jpg": true,
+        "**/*.webm": true,
+        "**/*.xlsx": true,
+        "**/*.docx": true,
+        "**/*.xml": true,
+        "**/*.mp4": true,
+        "**/*.mkv": true,
+        "**/*.wav": true,
+        "**/*.mp3": true,
+        "**/*.m4a": true,
+        "zProjectDevelopment/": true,
+        "LICENSE": true,
+    },
+    "search.exclude": {
+        ".vscode/": true,
+        "logs/": true,
+        "**/*.ico": true,
+        "**/*.bat": true,
+        "**/*.exe": true,
+        "**/*.png": true,
+        "**/*.jpg": true,
+        "**/*.webm": true,
+        "**/*.xlsx": true,
+        "**/*.docx": true,
+        "**/*.xml": true,
+        "**/*.mp4": true,
+        "**/*.mkv": true,
+        "**/*.wav": true,
+        "**/*.mp3": true,
+        "**/*.m4a": true,
+        "zProjectDevelopment/": true,
+        "LICENSE": true,
+    },
+
+}

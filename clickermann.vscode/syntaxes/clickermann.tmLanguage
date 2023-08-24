@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>scopeName</key>
+        <string>code.cms</string>
+
+        <key>fileTypes</key>
+        <array>
+            <string>cms</string>
+        </array>
+
+        <key>name</key>
+        <string>clickermann file</string>
+
+        <key>patterns</key>
+        <array>
+            <dict>
+                <key>match</key>
+                <string>\b(?i:(hint|info|information))\b</string>
+                <key>name</key>
+                <string>token.info-token</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(?i:(warning|warn))\b</string>
+                <key>name</key>
+                <string>token.warn-token</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(?i:(Error|Failure|Fail))\b</string>
+                <key>name</key>
+                <string>token.error-token</string>
+            </dict>
+
+            <dict>
+                <!-- Quoted strings with " -->
+                <!-- <key>match</key> -->
+                <!-- <string>"(.*?)"</string> -->
+                <key>begin</key>
+                <string>\"</string>
+                <key>end</key>
+                <string>\"</string>
+                <key>name</key>
+                <string>string.quoted.double</string>
+            </dict>
+            <dict>
+                <!-- comment -->
+                <key>match</key>
+                <string>//.*</string>
+                <key>name</key>
+                <string>comment.line.double-slash markup.italic</string>
+            </dict>
+            <dict>
+                <!-- numeric -->
+                <key>match</key>
+                <string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+                <key>name</key>
+                <string>constant.numeric</string>
+            </dict>
+
+            <dict>
+                <!-- assignment -->
+                <key>match</key>
+                <string>\=</string>
+                <key>name</key>
+                <string>keyword.operator.assignment</string>
+            </dict>
+            <dict>
+                <!-- operator comparison  keyword.other (blue) -->
+                <key>match</key>
+                <!-- <string>(\<|<=|!|!=|==|\>=|>)</string> -->
+                <string>&lt;|&lt;\=|\!|\!\=|\=\=|&gt;\=|&gt;</string>
+                <key>name</key>
+                <string>keyword.operator.comparison</string>
+            </dict>
+            <dict>
+                <!-- operator arithmetic -->
+                <key>match</key>
+                <string>\+|\-|\*|/</string>
+                <key>name</key>
+                <string>keyword.operator.arithmetic</string>
+            </dict>
+            <dict>
+                 <!-- keyword operator logical -->
+                <key>match</key>
+                <string>\b(?i:(and|or|xor))\b</string>
+                <key>name</key>
+                <string>keyword.operator.logical.python</string>
+            </dict>
+            <dict>
+                 <!-- operator logical \&amp;|\||\^ -->
+                <key>match</key>
+                <string>\&amp;|\||\^</string>
+                <key>name</key>
+                <string>keyword.operator.logical.python</string>
+            </dict>
+
+            <dict>
+                 <!-- preprocessor directives -->
+                <key>match</key>
+                <string>(?x)(\#(?:
+                            name|include|logfile|autorun|ps2_keyboard|ps2_mouse|define|preprocessor
+                        ))</string>
+                <key>name</key>
+                <string>entity.name.type</string>
+            </dict>
+            <dict>
+                 <!-- constant -->
+                <key>match</key>
+                <string>(?i:(#)[A-Za-z0-9_]*)</string>
+                <key>name</key>
+                <string>constant.language markup.bold</string>
+            </dict>
+
+            <dict>
+                 <!-- service variables -->
+                <key>match</key>
+                <string>(?x)(\$_(?:
+                            xmouse|ymouse|xmax|ymax|xmin|ymin|
+                            return1|return2|
+                            cursor|
+                            ms|time_t|time_h|time_m|time_str|date_y|date_m|date_d|time_s|date_str|
+                            hwnd_self|hwnd|pdir|
+                            ver_self|ver_sys|arch_sys|param_str
+                        ))</string>
+                <key>name</key>
+                <string>variable.language</string>
+            </dict>
+            <dict>
+                 <!-- variable other -->
+                <key>match</key>
+                <string>(?i:\$[A-Za-z0-9_]*)</string>
+                <key>name</key>
+                <string>variable.other</string>
+            </dict>
+
+            <dict>
+                 <!-- keyword control -->
+                <key>match</key>
+                <string>^\s*(?x)(?i:
+                            if|else|
+                            if_pixel_in|if_picture_in|
+                            while|for|switch|case|default|
+                            end_if|end_cyc|end_switch)\b</string>
+                <key>name</key>
+                <string>keyword.control</string>
+            </dict>
+            <dict>
+                 <!-- keyword control THREAD/SUB -->
+                <key>match</key>
+                <string>^\s*(?i:thread|sub|end_thread|end_sub)\b</string>
+                <key>name</key>
+                <string>markup.bold keyword.control</string>
+            </dict>
+
+            <dict>
+                 <!-- functions one per line -->
+                <key>match</key>
+                <string>^\s*(?x)(?i:
+                        wait|waitms|halt|hset|hsettext|call|callarr|execute|writemem|setkblayout|setthread|
+                        define|undefine|inc|arrpush|arrsort|arrconcat|setvar|
+                        logclear|logshow|logwrite|logwritec|print|printc|hintpopup|sound|beep|
+                        lclick|ldown|lup|rclick|rdown|rup|mclick|mdown|mup|dblclick|move|mover|wheeldown|wheelup|
+                        keydown|keyup|keypress|keystring|getkeysdown|
+                        getscreen|colormode|contrast|scanpxl|scanpicture|pxlreplace|screenshot|screenshotex|screenshotfix|
+                        strwriteln|strseparate|toclip|
+                        iniwrite|tfwrite|tfwritearr|tfdelete|tfclear|fcreate|fcopy|fdelete|fwritedata|getfilelist|getdirlist|
+                        wndfindarr|wndpos|wndsize|wndgetinfo|wndsetinfo|wndstate|wndbump|sendmessage|postmessage)\b</string>
+                <key>name</key>
+                <string>entity.name.function</string>
+            </dict>
+            <dict>
+                 <!-- functions -->
+                <key>match</key>
+                <string>(?x)(?i:
+                        hget|hgetpid|hgettext|readmem|getkblayout|iskeydown|
+                        rnd|rndfrom|dist|sin|cos|arcsin|arccos|sqrt|round|pow|abs|int|arrpop|arrsize|getvar|
+                        pxl|pxlxor|pxlcrc|pxlcount|colorgen|colorr|colorg|colorb|
+                        strlen|strcut|strcut2|strfilter|strpos|strconcat|strreplace|strreadln|strmd5|fromclip|char|code|
+                        iniread|tfread|tfreadarr|tfcount|freaddata|fexists|fsize|
+                        wndfind|getmessage|
+                        inputbox|dialogbox|radiobox|
+                        httpget|httppost)\b</string>
+                <key>name</key>
+                <string>entity.name.function</string>
+            </dict>
+
+            <dict>
+                <!-- GOTO -->
+                <key>match</key>
+                <string>^\s*(?i:goto)\b</string>
+                <key>name</key>
+                <!-- <string>token.warn-token</string> -->
+                <string>invalid.deprecated</string>
+            </dict>
+            <dict>
+                <!-- label -->
+                <key>match</key>
+                <string>^\s*(?i:[A-Za-z0-9_]*):$</string>
+                <key>name</key>
+                <string>token.warn-token</string>
+            </dict>
+            <dict>
+                 <!-- invalid deprecated -->
+                <key>match</key>
+                <string>^\s*(?i:break|load|if_time|if_keydown|traysay|gosub)\b</string>
+                <key>name</key>
+                <string>invalid.deprecated</string>
+            </dict>
+            <!-- <dict>
+                Generic URI/URL
+                <key>match</key>
+                <string>\b(?i:([a-z]|[0-9])+\:((\/\/)|((\/\/)?(\S)))+)</string>
+                <key>name</key>
+                <string>storage</string>
+            </dict> -->
+        </array>
+        <key>uuid</key>
+        <string>FF0550E0-3A29-11E3-AA6E-0800200C9A77</string>
+    </dict>
+</plist>

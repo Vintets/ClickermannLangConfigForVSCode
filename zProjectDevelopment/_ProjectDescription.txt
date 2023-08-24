@@ -1,0 +1,105 @@
+
+            *** ClickermannConfigLanguageForVSCode 4.14.003b***
+
+Кидаем папку clickermann.vscode в раздел %USERPROFILE%\.vscode\extensions
++Restart Code
+Profit!
+
+
+"vscode": ">=0.9.0-pre.1"
+"vscode": "^1.68.0"
+"vscode": "^1.9.0"
+
+
+Создайте пользовательский язык в коде Visual Studio
+https://translated.turbopages.org/proxy_u/en-ru.ru.8af8b454-64d9cd6d-f7fddbaa-74722d776562/https/stackoverflow.com/questions/30687783/create-custom-language-in-visual-studio-code
+
+
+
+Я не нашел официальной документации о доступных токенах (например, error-token, constant.numeric и т.д.). Но есть файл, расположенный в %VSCODE_INSTALLATION%\resources\app\out\vs\languages\markdown\common\tokens.css. Кажется, в нем перечислены все доступные токены и т.д. Используйте ее в качестве ссылки при создании .tmLanguage файла.
+
+Но обратите внимание: в некоторых темах используются только базовые маркеры. А в некоторых других темах используется один и тот же цвет для множества разных маркеров. Поэтому вам следует часто тестировать подсветку на наиболее распространенных темах, чтобы увидеть, хорошо выглядит результат или нет.
+
+
+<Keywords name="Operators1">( ) , : ; [ ] {} &lt; = &gt; . ? + - * / % &amp; | ^ ! ~ &quot;</Keywords>
+
+
+
+# ==================================================================================================
+            *** Git ***
+
+Проект ClickermannLangConfigForVSCode
+    cd "$YandexDisk/_Projects_Py/ClickermannLangConfigForVSCode"
+    git remote add origin git@bitbucket.org:Vintets/ClickermannLangConfigForVSCode.git
+    # добавить привязку ко 2 репозиторию (github)
+    git remote set-url origin --add git@github.com:Vintets/ClickermannLangConfigForVSCode.git
+
+
+    git push origin master
+
+
+# ==================================================================================================
+
+
+
+# ==================================================================================================
+            *** Tokens ***
+
+entity.name.type
+зелёный (салатовый)
+
+entity.name.function
+support.function
+жёлтый
+
+entity.name.tag
+constant.language
+синий
+
+
+variable.language
+синий
+
+variable.other
+бирюзовый
+
+invalid.deprecated
+invalid.illegal
+красный
+
+keyword.control
+мажента
+
+keyword.other
+синий
+
+keyword.operator.logical.python
+синий
+
+
+
+
+constant.other
+entity.name.section
+белый
+
+entity.other.inherited-class
+зелёный (салатовый)
+
+entity.other.attribute-name
+бирюзовый
+
+support.function.magic.python
+жёлтый
+
+keyword.operator.comparison
+белый
+
+keyword.operator.arithmetic
+
+
+#‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡
+#▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+#▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ==================================================================================================

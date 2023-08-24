@@ -1,0 +1,10 @@
+{
+    "iconDefinitions": {
+        "_folder_dark": {
+            "iconPath": "../images/Clickermann_icon_16x.png"
+        },
+        "_file_dark": {
+            "iconPath": "../images/Clickermann-v4_Mainicon.svg"
+        }
+    }
+}

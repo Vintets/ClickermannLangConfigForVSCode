@@ -1,0 +1,36 @@
+# System
+Thumbs.db
+.DS_Store
+*.bak
+*~
+
+# Project dirs
+/zProjectDevelopment/*
+/media/
+/screenshots/*
+# /.vscode/
+
+# Project files
+Test_snippets.cms
+/clickermann.vscode/images/Clickermann_icon_16x.png
+/clickermann.vscode/images/Clickermann_icon_32x.png
+/clickermann.vscode/images/Clickermann_icon_96x.png
+
+# Simlinks
+
+# Log files
+/logs/
+
+# Other files
+*_old*
+*_backup*
+*.jpg
+*.webm
+*.mp4
+*.mkv
+*.wav
+*.mp3
+*.m4a
+*.exe
+!/zProjectDevelopment/_ProjectDescription.txt
+!/screenshots/*_screenshot_*.png
