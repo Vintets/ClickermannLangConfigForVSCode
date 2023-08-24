@@ -1,5 +1,5 @@
 
-            *** ClickermannConfigLanguageForVSCode 4.14.003b***
+            *** ClickermannConfigLangForVSCode 4.14.003b***
 
 Кидаем папку clickermann.vscode в раздел %USERPROFILE%\.vscode\extensions
 +Restart Code
