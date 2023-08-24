@@ -30,7 +30,7 @@ https://translated.turbopages.org/proxy_u/en-ru.ru.8af8b454-64d9cd6d-f7fddbaa-74
 
 Проект ClickermannLangConfigForVSCode
     cd "$YandexDisk/_Projects_Py/ClickermannLangConfigForVSCode"
-    git remote add origin git@bitbucket.org:Vintets/ClickermannLangConfigForVSCode.git
+    git remote add origin git@bitbucket.org:Vintets/clickermannlangconfigforvscode.git
     # добавить привязку ко 2 репозиторию (github)
     git remote set-url origin --add git@github.com:Vintets/ClickermannLangConfigForVSCode.git
 
