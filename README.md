@@ -31,10 +31,10 @@
 ### Setup snippets
 `%APPDATA%\Code\User\snippets\clickermann.json`
 
-Альтернативный вариант:
-- F1 -->> Configure User Snippets -->> Clickermann
-- File -->> Settings -->> Configure User Snippets -->> Clickermann
-- и вставляем код из `clickermann.vscode\snippets\clickermann.json`
+Альтернативный вариант:<br />
+- F1 -->> Configure User Snippets -->> Clickermann<br />
+- File -->> Settings -->> Configure User Snippets -->> Clickermann<br />
+- и вставляем код из `clickermann.vscode\snippets\clickermann.json` <br />
 
 
 ## Screenshots
@@ -51,18 +51,14 @@ ver 4.14.003b page 2<br />
 ![License](https://img.shields.io/badge/license-MIT-green) <br />
 :license:  [MIT](https://github.com/toorusr/sitemap-generator/tree/master/LICENSE)
 
-``
-\*******************************************************
-\* Written by Vintets <programmer@vintets.ru>, August 2023
 
-\*
+******************************************************* <br />
+ Written by Vintets <programmer@vintets.ru>, August 2023 <br />
+ <br />
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;<br />
+ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+******************************************************* <br />
 
-\* This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-
-\* without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-\*******************************************************
-``
 ____
 
 :copyright: 2023 by Vintets
