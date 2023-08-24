@@ -22,19 +22,19 @@
 ## Setup
 
 Копируем папку<br />
-+ `clickermann.vscode` <br />
-+ в раздел <br />`%USERPROFILE%\.vscode\extensions` <br />
-+ Restart VS Code <br />
-+ Profit!
+- `clickermann.vscode` <br />
+- в раздел <br />`%USERPROFILE%\.vscode\extensions` <br />
+- Restart VS Code <br />
+- Profit!
 
 
 ### Setup snippets
 `%APPDATA%\Code\User\snippets\clickermann.json`
 
 Альтернативный вариант:<br />
-+ F1 -->> Configure User Snippets -->> Clickermann<br />
-+ File -->> Settings -->> Configure User Snippets -->> Clickermann<br />
-+ и вставляем код из `clickermann.vscode\snippets\clickermann.json` <br />
+- F1 -->> Configure User Snippets -->> Clickermann<br />
+- File -->> Settings -->> Configure User Snippets -->> Clickermann<br />
+- и вставляем код из `clickermann.vscode\snippets\clickermann.json` <br />
 
 
 ## Screenshots
