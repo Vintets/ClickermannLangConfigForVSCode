@@ -1,4 +1,5 @@
- {
+{
+    // condition, loop
     "new": {
         "prefix": ["new", "init"],
         "body": [
@@ -40,5 +41,48 @@
             "END_CYC"
         ],
         "description": "WHILE Loop"
+    },
+    "SWITCH condition": {
+        "prefix": "switch",
+        "body": [
+            "SWITCH(${1:\\$var})",
+            "    CASE(1)",
+            "        $2",
+            "    CASE(2)",
+            "        $3",
+            "${4:    DEFAULT\n        $5}",
+            "END_SWITCH",
+            "$0"
+        ],
+        "description": "SWITCH condition"
+    },
+    "Is key down": {
+        "prefix": "iskeydown",
+        "body": [
+            "IF(ISKEYDOWN(${1:#SPACE}) = ${2:1})",
+            "    $0",
+            "END_IF"
+        ],
+        "description": "Is key down"
+    },
+    "Условие с таймером, секунды": {
+        "prefix": ["timer sec", "таймер сек"],
+        "body": [
+            "IF(\\$time < \\$_time_t)",
+            "    $0",
+            "    \\$time = \\$_time_t + ${1:60}  // условие сработает снова через $1 сек",
+            "END_IF"
+        ],
+        "description": "Условие с таймером, секунды"
+    },
+    "Условие с таймером, миллисекунды": {
+        "prefix": ["timer ms", "таймер мс"],
+        "body": [
+            "IF(\\$time < \\$_ms)",
+            "    $0",
+            "    \\$time = \\$_ms + ${1:60000}  // условие сработает снова через $1 мс",
+            "END_IF"
+        ],
+        "description": "Условие с таймером, миллисекунды"
     },
 }
