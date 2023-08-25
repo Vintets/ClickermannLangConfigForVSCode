@@ -234,4 +234,54 @@
         ],
         "description": "SOUND play"
     },
+
+    // Preprocessor
+    "#name": {
+        "prefix": ["name", "имя скрипта", "название"],
+        "body": [
+            "#name \"${1:СуперБот v1.2}\"",
+            "$0"
+        ],
+        "description": "#name"
+    },
+    "#include": {
+        "prefix": ["include", "подключить скрипт"],
+        "body": [
+            "#include \"${1:mylib}.cms\"",
+            "$0"
+        ],
+        "description": "#include"
+    },
+    "#autorun": {
+        "prefix": ["autorun", "автозапуск"],
+        "body": [
+            "#autorun",
+            "$0"
+        ],
+        "description": "#autorun"
+    },
+    "#define": {
+        "prefix": ["define", "макрос"],
+        "body": [
+            "#define ${1:find}:${2:replace}",
+            "$0"
+        ],
+        "description": "#define"
+    },
+    "#ps2 keyboard": {
+        "prefix": ["ps2_keyboard", "ps/2 клавиатура"],
+        "body": [
+            "#ps2_keyboard",
+            "$0"
+        ],
+        "description": "#ps2 keyboard"
+    },
+    "#ps2 mouse": {
+        "prefix": ["ps2_mouse", "ps/2 мышь"],
+        "body": [
+            "#ps2_mouse",
+            "$0"
+        ],
+        "description": "#ps2 mouse"
+    },
 }

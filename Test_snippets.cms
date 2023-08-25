@@ -91,3 +91,12 @@ END_CYC
 HINTPOPUP("Сообщение", "Заголовок")
 SOUND("play.wav")
 BEEP(800, 200)
+
+
+// Preprocessor
+#name "СуперБот v1.2"
+#include "mylib.cms"
+#autorun
+#define find:replace
+#ps2_keyboard
+#ps2_mouse
