@@ -30,14 +30,13 @@
             "    $CLIPBOARD$0",
             "END_CYC"
         ],
-        "text": "FOR($i=0, $i < 3)",
         "description": "FOR Loop"
     },
     "WHILE Loop": {
         "prefix": "while",
         "body": [
             "WHILE(${1:\\$var < 5})",
-            "    $CLIPBOARD$0",
+            "    $0",
             "END_CYC"
         ],
         "description": "WHILE Loop"
