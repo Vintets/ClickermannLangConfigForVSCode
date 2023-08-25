@@ -29,17 +29,33 @@
 
 
 ### Setup snippets
-`%APPDATA%\Code\User\snippets\clickermann.json`
+
+можно установить сниппеты отдельно, без установки подсветки синтаксиса
+скопировать файл
+`clickermann.vscode\snippets\clickermann.json`
+в
+`%APPDATA%\Code\User\snippets\`
 
 Альтернативный вариант:<br />
 - F1 -->> Configure User Snippets -->> Clickermann<br />
 - File -->> Settings -->> Configure User Snippets -->> Clickermann<br />
 - и вставляем код из `clickermann.vscode\snippets\clickermann.json` <br />
 
-Для настройки отображения сниппетов добавить в файл глобальных настроек VS Code
+
+### Optionts
+
+дополнительные настройки добавить в файл глобальных настроек VS Code
 `%APPDATA%\Code\User\settings.json`
-строку
-`"editor.snippetSuggestions": "top",  // inline/top/bottom/none`
+
+```json
+    // для создания новых файлов .cms в кодировке UTF-8-Bom, добавить в файл глобальных настроек VS Code
+    "[clickermann]": {
+        "files.encoding": "utf8bom",
+        "files.autoGuessEncoding": true
+    }
+    // hастройка отображения сниппетов
+    "editor.snippetSuggestions": "top",  // inline/top/bottom/none
+```
 
 
 ## Screenshots
