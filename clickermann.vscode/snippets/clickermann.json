@@ -1,7 +1,7 @@
 {
     // condition, loop
-    "new": {
-        "prefix": ["new", "init"],
+    "Head script": {
+        "prefix": ["init", "head", "шапка", "автор", "заголовок"],
         "body": [
             "#name \"${1:$TM_FILENAME_BASE}\"",
             "// Author: Vint",
@@ -10,8 +10,8 @@
             "",
             "$0"
         ],
-        "text": "Head new script",
-        "description": "New default script"
+        "text": "Head script",
+        "description": "Head script (шапка скрипта)"
     },
     "IF condition": {
         "prefix": "if",
