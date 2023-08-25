@@ -85,4 +85,32 @@
         ],
         "description": "Условие с таймером, миллисекунды"
     },
+
+    // subroutines, threads
+    "SUB subroutines (подпрограмма)": {
+        "prefix": ["sub", "подпрограмма"],
+        "body": [
+            "SUB(${1:name}, ${2:\\$par1, \\$par2})",
+            "    $0",
+            "END_SUB"
+        ],
+        "description": "SUB subroutines (подпрограмма)"
+    },
+    "THREAD (поток)": {
+        "prefix": ["thread", "поток"],
+        "body": [
+            "THREAD(${1:name}, ${2:1})",
+            "    $0",
+            "END_THREAD"
+        ],
+        "description": "THREAD (поток)"
+    },
+    "SETTHREAD (управление потоком)": {
+        "prefix": ["setthread", "управление потоком"],
+        "body": [
+            "SETTHREAD(${1:thr_name}, ${2:1})  // 0-пауза, 1-старт, 2-стоп",
+            "$0"
+        ],
+        "description": "SETTHREAD (управление потоком)"
+    },
 }
