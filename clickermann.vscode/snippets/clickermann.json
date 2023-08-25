@@ -1,7 +1,7 @@
 {
-    // condition, loop
+    // New
     "Head script": {
-        "prefix": ["init", "head", "шапка", "автор", "заголовок"],
+        "prefix": ["new header", "init", "header", "шапка", "автор", "заголовок"],
         "body": [
             "#name \"${1:$TM_FILENAME_BASE}\"",
             "// Author: Vint",
@@ -13,6 +13,43 @@
         "text": "Head script",
         "description": "Head script (шапка скрипта)"
     },
+    "Окно лога (шаблон)": {
+        "prefix": ["log window", "окно лога"],
+        "body": [
+            "\\$log = 1",
+            "LOGCLEAR",
+            "IF(\\$log > 0)",
+            "    LOGSHOW(1, \\$_xmax-335, 28)",
+            "    WNDSIZE(WNDFIND(\"Лог\", 1), 336, 260)",
+            "END_IF",
+            "$0"
+        ],
+        "description": "Окно лога (шаблон)"
+    },
+    "Новый проект (шаблон)": {
+        "prefix": ["new script", "new project", "новый скрипт", "новый проект"],
+        "body": [
+            "//                              Настройки",
+            "//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n",
+            "// выводить окно полного лога (0 - Не выводить, 1,2,3 - Выводить для режима)",
+            "\\$log = 1\n",
+            "// Браузер",
+            "//\\$brawser = \"opera.exe\"",
+            "//\\$brawser = \"chrome.exe\"",
+            "\\$brawser = \"firefox.exe\"\n",
+            "//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n",
+            "WAITMS(500)",
+            "LOGCLEAR",
+            "IF(\\$log > 0)",
+            "    LOGSHOW(1, \\$_xmax-335, 28)",
+            "    WNDSIZE(WNDFIND(\"Лог\", 1), 336, 260)",
+            "END_IF",
+            "$0"
+        ],
+        "description": "Новый проект (шаблон)"
+    },
+
+    // condition, loop
     "IF condition": {
         "prefix": "if",
         "body": [
