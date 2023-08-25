@@ -36,6 +36,11 @@
 - File -->> Settings -->> Configure User Snippets -->> Clickermann<br />
 - и вставляем код из `clickermann.vscode\snippets\clickermann.json` <br />
 
+Для настройки отображения сниппетов добавить в файл глобальных настроек VS Code
+`%APPDATA%\Code\User\settings.json`
+строку
+`"editor.snippetSuggestions": "top",  // inline/top/bottom/none`
+
 
 ## Screenshots
 
