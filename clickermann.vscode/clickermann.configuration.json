@@ -1,5 +1,5 @@
 {
-// symbols used as brackets
+    // symbols used as brackets
     "brackets": [
         ["{", "}"],
         ["[", "]"],
@@ -9,14 +9,12 @@
     "autoClosingPairs": [
         ["{", "}"],
         ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""]
+        ["(", ")"]
     ],
     // symbols that that can be used to surround a selection
     "surroundingPairs": [
         ["{", "}"],
         ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""]
+        ["(", ")"]
     ]
 }
