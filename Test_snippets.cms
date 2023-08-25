@@ -1,0 +1,53 @@
+﻿#name "Test_snippets"
+// Author: Vint
+// Version: 0.1 (24.08.2023)
+// Скрипт для Clickermann v4.13.014
+
+// condition, loop
+IF($var = 3)
+    // yes
+ELSE
+    // no
+END_IF
+
+FOR($j=0, $j < 3)
+    // body
+END_CYC
+
+WHILE($var < 5)
+    // body
+END_CYC
+
+SWITCH($var)
+    CASE(1)
+    // body
+    CASE(2)
+    // body
+    DEFAULT
+    // body
+END_SWITCH
+
+IF(ISKEYDOWN(#SPACE) = 1)
+    // body
+END_IF
+
+IF($time < $_time_t)
+    // body
+    $time = $_time_t + 60  // условие сработает снова через 60 сек
+END_IF
+
+IF($time < $_ms)
+    // body
+    $time = $_ms + 60000  // условие сработает снова через 60000 мс
+END_IF
+
+// subroutines, threads
+SUB(name, $par1, $par2)
+    // body
+END_SUB
+
+THREAD(name, 1)
+    // body
+END_THREAD
+
+SETTHREAD(thr_name, 1)  // 0-пауза, 1-старт, 2-стоп
