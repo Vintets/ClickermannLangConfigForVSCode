@@ -150,4 +150,88 @@
         ],
         "description": "SETTHREAD (управление потоком)"
     },
+
+    // Log
+    "#logfile": {
+        "prefix": ["logfile", "лог файл"],
+        "body": [
+            "#logfile \"${1:debug.txt}\"",
+            "$0"
+        ],
+        "description": "#logfile"
+    },
+    "LOGSHOW": {
+        "prefix": ["logshow", "лог показать"],
+        "body": [
+            "LOGSHOW(1, ${1:100},${2:100})",
+            "$0"
+        ],
+        "description": "LOGSHOW"
+    },
+    "LOGCLEAR": {
+        "prefix": ["logclear", "лог очистить"],
+        "body": [
+            "LOGCLEAR",
+            "$0"
+        ],
+        "description": "LOGCLEAR"
+    },
+    "LOGWRITE": {
+        "prefix": ["logwrite", "print", "вывод в лог"],
+        "body": [
+            "LOGWRITE(\"$1\")",
+            "$0"
+        ],
+        "description": "LOGWRITE"
+    },
+    "Log1 (шаблон)": {
+        "prefix": ["logwrite", "print", "вывод в лог", "log1"],
+        "body": [
+            "LOGWRITE(\"X/Y  \", \\$_return1, \" / \", \\$_return2)",
+            "$0"
+        ],
+        "description": "Log1 (шаблон)"
+    },
+    "Log2 (шаблон)": {
+        "prefix": ["logwrite", "print", "вывод в лог", "log2"],
+        "body": [
+            "LOGWRITE(\"X=\", \\$_return1, \" Y=\", \\$_return2)",
+            "$0"
+        ],
+        "description": "Log2 (шаблон)"
+    },
+    "Log massive (шаблон)": {
+        "prefix": ["logwrite massive", "print massive", "лог массива"],
+        "body": [
+            "FOR(\\$i=0, \\$i < ARRSIZE(\\$${1:arr}))",
+            "    LOGWRITE(\"[\", \\$i, \"]  \", \\$$1[\\$i])",
+            "END_CYC",
+            "$0"
+        ],
+        "description": "Log massive (шаблон)"
+    },
+    "HINTPOPUP": {
+        "prefix": ["hintpopup", "traysay", "сообщение в трей", "tray"],
+        "body": [
+            "HINTPOPUP(\"${1:Сообщение}\", \"${2:Заголовок}\")",
+            "$0"
+        ],
+        "description": "HINTPOPUP"
+    },
+    "SOUND play": {
+        "prefix": ["sound", "play", "звуковой файл"],
+        "body": [
+            "SOUND(\"${1:play}.wav\")",
+            "$0"
+        ],
+        "description": "SOUND play"
+    },
+    "BEEP note": {
+        "prefix": ["beep", "бипер", "звуковой сигнал"],
+        "body": [
+            "BEEP(${1:800}, ${2:200})",
+            "$0"
+        ],
+        "description": "SOUND play"
+    },
 }

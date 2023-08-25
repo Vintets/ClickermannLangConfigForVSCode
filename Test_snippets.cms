@@ -73,3 +73,21 @@ THREAD(name, 1)
 END_THREAD
 
 SETTHREAD(thr_name, 1)  // 0-пауза, 1-старт, 2-стоп
+
+
+// Log
+#logfile "debug.txt"
+LOGSHOW(1, 100,100)
+LOGCLEAR
+
+LOGWRITE("")
+LOGWRITE("X/Y  ", $_return1, " / ", $_return2)
+LOGWRITE("X=", $_return1, " Y=", $_return2)
+
+FOR($i=0, $i < ARRSIZE($arr))
+    LOGWRITE("[", $i, "]  ", $arr[$i])
+END_CYC
+
+HINTPOPUP("Сообщение", "Заголовок")
+SOUND("play.wav")
+BEEP(800, 200)
