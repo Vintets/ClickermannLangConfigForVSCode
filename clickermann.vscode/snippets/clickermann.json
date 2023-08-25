@@ -1,4 +1,4 @@
-{
+ {
     "new": {
         "prefix": ["new", "init"],
         "body": [
@@ -9,9 +9,21 @@
             "",
             "$0"
         ],
+        "text": "Head new script",
         "description": "New default script"
     },
-    "FOR cycle": {
+    "IF condition": {
+        "prefix": "if",
+        "body": [
+            "IF(${1:\\$var = 3})",
+            "    $2",
+            "${3:ELSE\n    $4}",
+            "END_IF",
+            "$0"
+        ],
+        "description": "IF condition"
+    },
+    "FOR Loop": {
         "prefix": "for",
         "body": [
             "FOR(\\$${1|i,j,k|}=0, \\$$1 < ${2:3})",
@@ -19,6 +31,15 @@
             "END_CYC"
         ],
         "text": "FOR($i=0, $i < 3)",
-        "description": "FOR cycle"
-    }
+        "description": "FOR Loop"
+    },
+    "WHILE Loop": {
+        "prefix": "while",
+        "body": [
+            "WHILE(${1:\\$var < 5})",
+            "    $CLIPBOARD$0",
+            "END_CYC"
+        ],
+        "description": "WHILE Loop"
+    },
 }
