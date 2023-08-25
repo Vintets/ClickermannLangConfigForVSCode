@@ -43,11 +43,15 @@
             "language": "clickermann",
             "scopeName": "code.cms",
             "path": "./syntaxes/clickermann.tmLanguage"
+        }],
+        "snippets": [{
+            "language": "clickermann",
+            "path": "./snippets/clickermann.json"
         }]
     },
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/"
+        "url": "https://github.com/Vintets/ClickermannLangConfigForVSCode"
     }
 }

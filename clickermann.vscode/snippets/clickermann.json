@@ -1,0 +1,24 @@
+{
+    "new": {
+        "prefix": ["new", "init"],
+        "body": [
+            "#name \"${1:$TM_FILENAME_BASE}\"",
+            "// Author: Vint",
+            "// Version: 0.1 ($CURRENT_DATE.$CURRENT_MONTH.$CURRENT_YEAR)",
+            "// Скрипт для Clickermann v4.13.014",
+            "",
+            "$0"
+        ],
+        "description": "New default script"
+    },
+    "FOR cycle": {
+        "prefix": "for",
+        "body": [
+            "FOR(\\$${1|i,j,k|}=0, \\$$1 < ${2:3})",
+            "    $CLIPBOARD$0",
+            "END_CYC"
+        ],
+        "text": "FOR($i=0, $i < 3)",
+        "description": "FOR cycle"
+    }
+}
