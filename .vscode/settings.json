@@ -42,7 +42,7 @@
         "**/*.mp3": true,
         "**/*.m4a": true,
         "zProjectDevelopment/": true,
-        "LICENSE": true,
+        "**/LICENSE": true,
     },
     "search.exclude": {
         ".vscode/": true,
@@ -62,7 +62,7 @@
         "**/*.mp3": true,
         "**/*.m4a": true,
         "zProjectDevelopment/": true,
-        "LICENSE": true,
+        "**/LICENSE": true,
     },
 
 }
