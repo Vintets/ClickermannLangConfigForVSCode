@@ -284,4 +284,88 @@
         ],
         "description": "#ps2 mouse"
     },
+
+    // Keyboard
+    "KEYPRESS Нажать клавишу": {
+        "prefix": ["keypress", "нажать клавишу"],
+        "body": [
+            "KEYPRESS(#${1:SPACE})",
+            "$0"
+        ],
+        "description": "KEYPRESS Нажать клавишу"
+    },
+    "KEYDOWN Зажать клавишу": {
+        "prefix": ["keydown", "зажать клавишу"],
+        "body": [
+            "KEYDOWN(#${1:SPACE})",
+            "$0"
+        ],
+        "description": "KEYDOWN Зажать клавишу"
+    },
+    "KEYUP Отпустить клавишу": {
+        "prefix": ["keyup", "отпустить клавишу"],
+        "body": [
+            "KEYUP(#${1:SPACE})",
+            "$0"
+        ],
+        "description": "KEYUP Отпустить клавишу"
+    },
+    "KEYSTRING Набрать текст": {
+        "prefix": ["keystring", "набрать текст"],
+        "body": [
+            "KEYSTRING(\"${1:str}\", ${2:50})",
+            "$0"
+        ],
+        "description": "KEYSTRING Набрать текст"
+    },
+    "GETKEYSDOWN Поместить в массив зажатые клавиши": {
+        "prefix": "getkeysdown",
+        "body": [
+            "GETKEYSDOWN(\\$${1:arr})",
+            "$0"
+        ],
+        "description": "GETKEYSDOWN Поместить в массив зажатые клавиши"
+    },
+    "GETKBLAYOUT Получить код раскладки клавиатуры окна": {
+        "prefix": ["getkblayout", "получить язык"]
+        "body": [
+            "GETKBLAYOUT(\\$${1:hwnd})  //1033 En 1049 Ru",
+            "$0"
+        ],
+        "description": "GETKBLAYOUT Получить код раскладки клавиатуры окна"
+    },
+    "SETKBLAYOUT Установить код раскладки клавиатуры в окне": {
+        "prefix": ["setkblayout", "установить язык"]
+        "body": [
+            "SETKBLAYOUT(\\$${1:hwnd}, ${2:1033})  //1033 En 1049 Ru",
+            "$0"
+        ],
+        "description": "SETKBLAYOUT Установить код раскладки клавиатуры в окне"
+    },
+    "Ctrl+V (шаблон)": {
+        "prefix": ["ctrl+v", "комбинация клавиш"]
+        "body": [
+            "KEYDOWN(#${1:CTRL})",
+            "WAITMS(30)",
+            "KEYPRESS(#${2:V})",
+            "WAITMS(30)",
+            "KEYUP(#$1)",
+            "WAITMS(100)",
+            "$0"
+        ],
+        "description": "Ctrl+V (шаблон)"
+    },
+    "KeyDown + KeyUp (шаблон)": {
+        "prefix": ["keydown+keyup", "нажать+отпустить клавишу"]
+        "body": [
+            "KEYDOWN(#${1:A})",
+            "WAITMS(30)",
+            "KEYUP(#$1)",
+            "WAITMS(50)",
+            "$0"
+        ],
+        "description": "KeyDown + KeyUp (шаблон)"
+    },
+
+    // Mouse
 }

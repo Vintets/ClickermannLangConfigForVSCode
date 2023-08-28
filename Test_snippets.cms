@@ -100,3 +100,28 @@ BEEP(800, 200)
 #define find:replace
 #ps2_keyboard
 #ps2_mouse
+
+
+// Keyboard
+KEYPRESS(#SPACE)
+KEYDOWN(#SPACE)
+KEYUP(#SPACE)
+KEYSTRING("str", 50)
+GETKEYSDOWN($arr)
+GETKBLAYOUT($hwnd)  //1033 En 1049 Ru
+SETKBLAYOUT($hwnd, 1033)  //1033 En 1049 Ru
+
+KEYDOWN(#CTRL)
+WAITMS(30)
+KEYPRESS(#V)
+WAITMS(30)
+KEYUP(#CTRL)
+WAITMS(100)
+
+KEYDOWN(#A)
+WAITMS(30)
+KEYUP(#A)
+WAITMS(50)
+
+
+// Mouse
