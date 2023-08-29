@@ -652,6 +652,158 @@
         ],
         "description": "$_return2 2-й результат функции"
     },
+    "$_xmouse, $_ymouse": {
+        "prefix": "$_xmouse, $_ymouse",
+        "body": [
+            "\\$_xmouse, \\$_ymouse"
+        ],
+        "description": "$_xmouse, $_ymouse"
+    },
+    "$_xmax, $_ymax": {
+        "prefix": "$_xmax, $_ymax",
+        "body": [
+            "\\$_xmax, \\$_ymax"
+        ],
+        "description": "$_xmax, $_ymax"
+    },
+    "$_return1, $_return2": {
+        "prefix": "$_return1, $_return2",
+        "body": [
+            "\\$_return1, \\$_return2"
+        ],
+        "description": "$_return1, $_return2"
+    },
+
+    "$_hwnd Текущий HWND": {
+        "prefix": "$_hwnd",
+        "body": [
+            "\\$_hwnd"
+        ],
+        "description": "$_hwnd Текущий HWND"
+    },
+    "$_hwnd_self HWND кликера": {
+        "prefix": "$_hwnd_self",
+        "body": [
+            "\\$_hwnd_self"
+        ],
+        "description": "$_hwnd_self HWND кликера"
+    },
+    "$_cursor Код курсора": {
+        "prefix": "$_cursor",
+        "body": [
+            "\\$_cursor"
+        ],
+        "description": "$_cursor Код курсора"
+    },
+    "$_ver_self Версия программы": {
+        "prefix": "$_ver_self",
+        "body": [
+            "\\$_ver_self"
+        ],
+        "description": "$_ver_self Версия программы"
+    },
+    "$_ver_sys Версия системы": {
+        "prefix": "$_ver_sys",
+        "body": [
+            "\\$_ver_sys"
+        ],
+        "description": "$_ver_sys Версия системы"
+    },
+    "$_arch_sys Разрядность системы": {
+        "prefix": "$_arch_sys",
+        "body": [
+            "\\$_arch_sys"
+        ],
+        "description": "$_arch_sys Разрядность системы"
+    },
+    "$_pdir Текущая рабочая директория": {
+        "prefix": "$_pdir",
+        "body": [
+            "\\$_pdir"
+        ],
+        "description": "$_pdir Текущая рабочая директория"
+    },
+    "$_param_str Параметры запуска программы": {
+        "prefix": "$_param_str",
+        "body": [
+            "\\$_param_str"
+        ],
+        "description": "$_param_str Параметры запуска программы"
+    },
+
+    // Service variables Time
+    "$_ms Системный таймер": {
+        "prefix": "$_ms",
+        "body": [
+            "\\$_ms"
+        ],
+        "description": "$_ms Системный таймер"
+    },
+    "$_time_t Время Unix": {
+        "prefix": "$_time_t",
+        "body": [
+            "\\$_time_t"
+        ],
+        "description": "$_time_t Время Unix"
+    },
+    "$_time_h Текущий час": {
+        "prefix": "$_time_h",
+        "body": [
+            "\\$_time_h"
+        ],
+        "description": "$_time_h Текущий час"
+    },
+    "$_time_m Текущая минута": {
+        "prefix": "$_time_m",
+        "body": [
+            "\\$_time_m"
+        ],
+        "description": "$_time_m Текущая минута"
+    },
+    "$_time_s Текущая секунда": {
+        "prefix": "$_time_s",
+        "body": [
+            "\\$_time_s"
+        ],
+        "description": "$_time_s Текущая секунда"
+    },
+    "$_date_d Текущее число": {
+        "prefix": "$_date_d",
+        "body": [
+            "\\$_date_d"
+        ],
+        "description": "$_date_d Текущее число"
+    },
+    "$_date_m Текущий месяц": {
+        "prefix": "$_date_m",
+        "body": [
+            "\\$_date_m"
+        ],
+        "description": "$_date_m Текущий месяц"
+    },
+    "$_date_y Текущий год": {
+        "prefix": "$_date_y",
+        "body": [
+            "\\$_date_y"
+        ],
+        "description": "$_date_y Текущий год"
+    },
+    "$_date_str Текущая дата (дд.мм.гггг)": {
+        "prefix": "$_date_str",
+        "body": [
+            "\\$_date_str"
+        ],
+        "description": "$_date_str Текущая дата (дд.мм.гггг)"
+    },
+    "$_time_str Текущее время (чч.мм.сс)": {
+        "prefix": "$_time_str",
+        "body": [
+            "\\$_time_str"
+        ],
+        "description": "$_time_str Текущее время (чч.мм.сс)"
+    },
+
+
 
 
     // Graphics

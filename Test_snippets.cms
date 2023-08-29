@@ -159,4 +159,39 @@ $dialog = DIALOGBOX("Продолжить действие", 1, 2)
 $res = RADIOBOX("Выберете пункт", "1 Мясо", "2 Птица", "3 Рыба")
 
 
+// Service variables
+$_xmouse
+$_ymouse
+$_xmin
+$_ymin
+$_xmax
+$_ymax
+$_return1
+$_return2
+$_xmouse, $_ymouse
+$_xmax, $_ymax
+$_return1, $_return2
+
+$_hwnd
+$_hwnd_self
+$_cursor
+$_ver_self
+$_ver_sys
+$_arch_sys
+$_pdir
+$_param_str
+
+// Service variables Time
+$_ms
+$_time_t
+$_time_h
+$_time_m
+$_time_s
+$_date_d
+$_date_m
+$_date_y
+$_date_str
+$_time_str
+
+
 // Graphics
