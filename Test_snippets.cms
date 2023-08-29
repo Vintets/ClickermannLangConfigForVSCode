@@ -365,3 +365,6 @@ COLORB(255)
 SCREENSHOT
 SCREENSHOTEX(0,0, $_xmax,$_ymax, "Image_", 0)
 SCREENSHOTFIX(0,0, $_xmax,$_ymax, "C:\file.bmp", 0)
+
+
+// Computing

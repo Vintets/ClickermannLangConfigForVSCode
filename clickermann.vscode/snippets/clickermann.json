@@ -1143,4 +1143,93 @@
         ],
         "description": "SCREENSHOTFIX сохранить буфер в фиксированный файл"
     },
+
+    // Computing
+    "RND рандом из диапазона": {
+        "prefix": "rnd",
+        "body": [
+            "RND(${1:1}, ${2:5})"
+        ],
+        "description": "RND рандом из диапазона"
+    },
+    "RNDFROM рандом из вариантов": {
+        "prefix": "rndfrom",
+        "body": [
+            "RNDFROM(${1:1}, ${2:3}, ${3:5})"
+        ],
+        "description": "RNDFROM рандом из вариантов"
+    },
+    "DIST расстояние между пикселями": {
+        "prefix": "dist",
+        "body": [
+            "DIST(${1:10}, ${2:10}, ${3:100}, ${4:200})"
+        ],
+        "description": "DIST расстояние между пикселями"
+    },
+    "INT целая часть числа": {
+        "prefix": "int",
+        "body": [
+            "INT(${1:25.5})"
+        ],
+        "description": "INT целая часть числа"
+    },
+    "ROUND округление числа": {
+        "prefix": "round",
+        "body": [
+            "ROUND(${1:25.5}, ${2:0})"
+        ],
+        "description": "ROUND округление числа"
+    },
+
+    "SIN синус": {
+        "prefix": ["sin", "синус"],
+        "body": [
+            "SIN(${1:45})"
+        ],
+        "description": "SIN синус"
+    },
+    "COS косинус": {
+        "prefix": ["cos", "косинус"],
+        "body": [
+            "COS(${1:45})"
+        ],
+        "description": "COS косинус"
+    },
+    "ARCSIN арксинус": {
+        "prefix": ["arcsin", "арксинус"],
+        "body": [
+            "ARCSIN(${1:45})"
+        ],
+        "description": "ARCSIN арксинус"
+    },
+    "ARCCOS арккосинус": {
+        "prefix": ["arccos", "арккосинус"],
+        "body": [
+            "ARCCOS(${1:45})"
+        ],
+        "description": "ARCCOS арккосинус"
+    },
+    "SQRT квадратный корень": {
+        "prefix": ["sqrt", "корень квадратный"],
+        "body": [
+            "SQRT(${1:4})"
+        ],
+        "description": "SQRT квадратный корень"
+    },
+    "POW возведение в степень": {
+        "prefix": ["pow", "степень"],
+        "body": [
+            "POW(${1:4}, ${2:2})"
+        ],
+        "description": "POW возведение в степень"
+    },
+    "ABS модуль числа": {
+        "prefix": ["abs", "модуль числа"],
+        "body": [
+            "ABS(${1:-9})"
+        ],
+        "description": "ABS модуль числа"
+    },
+
+
 }
