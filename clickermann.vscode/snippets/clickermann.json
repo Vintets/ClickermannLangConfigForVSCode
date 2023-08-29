@@ -803,8 +803,344 @@
         "description": "$_time_str Текущее время (чч.мм.сс)"
     },
 
-
-
-
     // Graphics
+    "GETSCREEN обновить графический буфер": {
+        "prefix": "getscreen",
+        "body": [
+            "GETSCREEN(${1:0}, ${2:0}, ${3:400}, ${4:400})",
+            "$0"
+        ],
+        "description": "GETSCREEN обновить графический буфер"
+    },
+    "COLORMODE упрощение цветов области": {
+        "prefix": "colormode",
+        "body": [
+            "COLORMODE(${1:7}, ${2:10}, ${3:10}, ${4:400}, ${5:400})",
+            "$0"
+        ],
+        "description": "COLORMODE упрощение цветов области"
+    },
+    "CONTRAST контрастность области": {
+        "prefix": "contrast",
+        "body": [
+            "CONTRAST(${1:4}, ${2:10}, ${3:10}, ${4:400}, ${5:400})",
+            "$0"
+        ],
+        "description": "CONTRAST контрастность области"
+    },
+    "IF_PIXEL_IN найти цвет": {
+        "prefix": ["if_pixel_in", "найти цвет"],
+        "body": [
+            "IF_PIXEL_IN(${1:0},${2:0}, ${3:\\$_xmax},${4:\\$_ymax}, ${5:255})",
+            "    LCLICK(\\$_return1, \\$_return2)",
+            "    WAITMS(100)",
+            "END_IF",
+            "$0"
+        ],
+        "description": "IF_PIXEL_IN найти цвет"
+    },
+    "IF_PICTURE_IN найти картинку": {
+        "prefix": ["if_picture_in", "найти картинку"],
+        "body": [
+            "IF_PICTURE_IN(${1:0},${2:0}, ${3:\\$_xmax},${4:\\$_ymax}, \"${5:pict}.bmp\", ${6:-1}, ${7:100})",
+            "    LCLICK(\\$_return1, \\$_return2)",
+            "    WAITMS(100)",
+            "END_IF",
+            "$0"
+        ],
+        "description": "IF_PICTURE_IN найти картинку"
+    },
+    "PXL получить цвет по координате": {
+        "prefix": "pxl",
+        "body": [
+            "PXL(${1:10}, ${2:10})",
+            "$0"
+        ],
+        "description": "PXL получить цвет по координате"
+    },
+    "IF PXL проверить цвет по координате": {
+        "prefix": ["if(pxl", "проверить цвет"],
+        "body": [
+            "IF(PXL(${1:10}, ${2:10}) = ${3:255})",
+            "    $4",
+            "END_IF",
+            "$0"
+        ],
+        "description": "IF PXL проверить цвет по координате"
+    },
+    "SCANPXL найти все пикселы": {
+        "prefix": ["scanpxl", "найти все пикселы"],
+        "body": [
+            "SCANPXL(\\$${1:arr}, ${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, ${6:255})",
+            "$0"
+        ],
+        "description": "SCANPXL найти все пикселы"
+    },
+    "SCANPICTURE найти все картинки": {
+        "prefix": ["scanpicture", "найти все картинки"],
+        "body": [
+            "SCANPICTURE(\\$${1:arr}, ${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, \"${6:pict}.bmp\", ${7:-1}, ${8:100})",
+            "$0"
+        ],
+        "description": "SCANPICTURE найти все картинки"
+    },
+    "SCANPXL (шаблон) найти все пикселы": {
+        "prefix": ["SCANPXL (block)", "найти все пикселы (шаблон)"],
+        "body": [
+            "GETSCREEN($2, $3, $4, $5)",
+            "SCANPXL(\\$${1:scan}, ${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, ${6:255})",
+            "\\$SHIFT_X = ${7:1}  // смещение (кол-во игнор пикселов после найденного)",
+            "\\$SHIFT_Y = ${8:1}",
+            "\\$scan_size = ARRSIZE(\\$scan)",
+            "FOR(\\$i=0, \\$i < \\$scan_size, 2)",
+            "    \\$X = \\$scan[\\$i]",
+            "    \\$Y = \\$scan[\\$i + 1]",
+            "    IF((\\$X > \\$X2) | (\\$Y > \\$Y2))",
+            "        \\$X2 = \\$X + \\$SHIFT_X",
+            "        \\$Y2 = \\$Y + \\$SHIFT_Y",
+            "        ${9:MOVE(\\$X, \\$Y)}  // действие",
+            "        INC(\\$scan_count, 1)",
+            "        LOGWRITE(\"X: \", \\$X, \" Y: \", \\$Y)",
+            "        WAITMS(100)",
+            "    END_IF",
+            "END_CYC",
+            "UNDEFINE(\\$scan)\n",
+            "LOGWRITE(\"=====================\")",
+            "LOGWRITE(\"Всего найдено: \", \\$scan_count)",
+            "$0"
+        ],
+        "description": "SCANPXL (шаблон) найти все пикселы"
+    },
+    "SCANPICTURE FOR (шаблон) найти все картинки": {
+        "prefix": ["scanpicture (block for)", "найти все картинки (шаблон for)"],
+        "body": [
+            "GETSCREEN($2, $3, $4, $5)",
+            "SCANPICTURE(\\$${1:scan}, ${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, \"${6:pict}.bmp\", ${7:-1}, ${8:100})",
+            "",
+            "\\$scan_size = ARRSIZE(\\$scan)",
+            "FOR(\\$i=0, \\$i < \\$scan_size, 2)",
+            "    \\$X = \\$scan[\\$i]",
+            "    \\$Y = \\$scan[\\$i + 1]",
+            "    ${9:MOVE(\\$X, \\$Y)}  // действие",
+            "    LOGWRITE(\"X: \", \\$X, \" Y: \", \\$Y)",
+            "    WAITMS(100)",
+            "END_CYC",
+            "UNDEFINE(\\$scan)",
+            "$0"
+        ],
+        "description": "SCANPICTURE FOR (шаблон) найти все картинки"
+    },
+    "SCANPICTURE WHILE (шаблон) найти все картинки": {
+        "prefix": ["scanpicture (block while)", "найти все картинки (шаблон while)"],
+        "body": [
+            "GETSCREEN($2, $3, $4, $5)",
+            "SCANPICTURE(\\$${1:scan}, ${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, \"${6:pict}.bmp\", ${7:-1}, ${8:100})",
+            "",
+            "\\$ARR_NUM = 0",
+            "WHILE(\\$ARR_NUM < ARRSIZE(\\$scan))",
+            "    \\$X = \\$scan[\\$ARR_NUM]",
+            "    \\$Y = \\$scan[\\$ARR_NUM + 1]",
+            "    INC(\\$ARR_NUM, 2)",
+            "    ${9:MOVE(\\$X, \\$Y)}  // действие",
+            "    LOGWRITE(\"X: \", \\$X, \" Y: \", \\$Y)",
+            "    WAITMS(100)",
+            "END_CYC",
+            "UNDEFINE(\\$scan)",
+            "$0"
+        ],
+        "description": "SCANPICTURE WHILE (шаблон) найти все картинки"
+    },
+    "IF_PICTURE_IN ожидание картинки (шаблон)": {
+        "prefix": ["if_picture_in (block wait)", "ожидание картинки (шаблон)"],
+        "body": [
+            "\\$found = 0",
+            "WHILE(\\$found = 0)",
+            "    GETSCREEN($1, $2, $3, $4)",
+            "    IF_PICTURE_IN(${1:0},${2:0}, ${3:\\$_xmax},${4:\\$_ymax}, \"${5:pict}.bmp\", ${6:-1}, ${7:100})",
+            "        \\$found = 1",
+            "        LCLICK(\\$_return1, \\$_return2)",
+            "        WAITMS(100)",
+            "    ELSE",
+            "        WAITMS(300)",
+            "    END_IF",
+            "END_CYC",
+            "$0"
+        ],
+        "description": "IF_PICTURE_IN ожидание картинки (шаблон)"
+    },
+    "IF_PICTURE_IN ожидание картинки с таймером (шаблон)": {
+        "prefix": ["if_picture_in (block wait timer)", "ожидание картинки (шаблон таймер)"],
+        "body": [
+            "\\$time = \\$_time_t + ${1:10}",
+            "WHILE(\\$time > \\$_time_t)",
+            "    GETSCREEN($2, $3, $4, $5)",
+            "    IF_PICTURE_IN(${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, \"${6:pict}.bmp\", ${7:-1}, ${8:100})",
+            "        \\$time = 0",
+            "        LCLICK(\\$_return1, \\$_return2)",
+            "        WAITMS(100)",
+            "    ELSE",
+            "        WAITMS(300)",
+            "    END_IF",
+            "END_CYC",
+            "IF(\\$time ! 0)",
+            "    LOGWRITE(\"время истекло, картинка не найдена\")",
+            "END_IF",
+            "$0"
+        ],
+        "description": "IF_PICTURE_IN ожидание картинки с таймером (шаблон)"
+    },
+    "IF_PICTURE_IN ожидание картинки с таймером ms (шаблон)": {
+        "prefix": ["if_picture_in (block wait timer ms)", "ожидание картинки (шаблон таймер ms)"],
+        "body": [
+            "\\$time = \\$_ms + ${1:10000}",
+            "WHILE(\\$time > \\$_ms)",
+            "    GETSCREEN($2, $3, $4, $5)",
+            "    IF_PICTURE_IN(${2:0},${3:0}, ${4:\\$_xmax},${5:\\$_ymax}, \"${6:pict}.bmp\", ${7:-1}, ${8:100})",
+            "        \\$time = 0",
+            "        LCLICK(\\$_return1, \\$_return2)",
+            "        WAITMS(100)",
+            "    ELSE",
+            "        WAITMS(300)",
+            "    END_IF",
+            "END_CYC",
+            "IF(\\$time ! 0)",
+            "    LOGWRITE(\"время истекло, картинка не найдена\")",
+            "END_IF",
+            "$0"
+        ],
+        "description": "IF_PICTURE_IN ожидание картинки с таймером ms (шаблон)"
+    },
+    "PXL ожидание цвета (шаблон)": {
+        "prefix": ["pxl (block wait)", "ожидание цвета (шаблон)"],
+        "body": [
+            "GETSCREEN($1, $2, $1, $2)",
+            "WHILE(PXL(${1:100}, ${2:200}) ! ${3:255})",
+            "    WAITMS(100)",
+            "    GETSCREEN($1, $2, $1, $2)",
+            "END_CYC",
+            "$0"
+        ],
+        "description": "PXL ожидание цвета (шаблон)"
+    },
+    "PXL ожидание цвета таймер (шаблон)": {
+        "prefix": ["pxl (block wait timer)", "ожидание цвета (шаблон таймер)"],
+        "body": [
+            "\\$time = \\$_ms + ${1:30000}",
+            "GETSCREEN($2, $3, $2, $3)",
+            "WHILE((PXL(${2:100}, ${3:200}) ! ${4:255}) & (\\$time > \\$_ms))"
+            "    WAITMS(100)",
+            "    GETSCREEN($2, $3, $2, $3)",
+            "END_CYC",
+            "IF(\\$time ! 0)",
+            "    LOGWRITE(\"время истекло, цвет не появился\")",
+            "END_IF",
+            "$0"
+        ],
+        "description": "PXL ожидание цвета таймер (шаблон)"
+    },
+    "IF_PIXEL_IN ожидание цвета (шаблон)": {
+        "prefix": ["if_pixel_in (block wait)", "ожидание цвета (шаблон)"],
+        "body": [
+            "\\$found = 0",
+            "WHILE(\\$found = 0)",
+            "    GETSCREEN($1, $2, $3, $4)",
+            "    IF_PIXEL_IN(${1:0},${2:0}, ${3:\\$_xmax},${4:\\$_ymax}, ${5:255})",
+            "        \\$found = 1",
+            "        LCLICK(\\$_return1, \\$_return2)",
+            "        WAITMS(100)",
+            "    ELSE",
+            "        WAITMS(300)",
+            "    END_IF",
+            "END_CYC",
+            "$0"
+        ],
+        "description": "IF_PIXEL_IN ожидание цвета (шаблон)"
+    },
+
+    "PXLCOUNT посчитать кол-во пикселов": {
+        "prefix": "pxlcount",
+        "body": [
+            "PXLCOUNT(${1:10},${2:10}, ${3:\\$_xmax},${4:\\$_ymax}, ${5:255})",
+            "$0"
+        ],
+        "description": "PXLCOUNT посчитать кол-во пикселов"
+    },
+    "PXLXOR контрольная сумма цветов": {
+        "prefix": "pxlxor",
+        "body": [
+            "PXLXOR(${1:10},${2:10}, ${3:\\$_xmax},${4:\\$_ymax})",
+            "$0"
+        ],
+        "description": "PXLXOR контрольная сумма цветов"
+    },
+    "PXLCRC контрольная сумма пикселов CRC32": {
+        "prefix": "pxlcrc",
+        "body": [
+            "PXLCRC(${1:10},${2:10}, ${3:\\$_xmax},${4:\\$_ymax})",
+            "$0"
+        ],
+        "description": "PXLCRC контрольная сумма пикселов CRC32"
+    },
+    "PXLREPLACE замена цвета": {
+        "prefix": "pxlreplace",
+        "body": [
+            "PXLREPLACE(${1:10},${2:10}, ${3:\\$_xmax},${4:\\$_ymax}, ${5:\\$oldcolor}, ${6:\\$newcolor})",
+            "$0"
+        ],
+        "description": "PXLREPLACE замена цвета"
+    },
+
+    "COLORGEN генерация цвета": {
+        "prefix": "colorgen",
+        "body": [
+            "COLORGEN(${1:255}, ${2:255}, ${3:255})"
+        ],
+        "description": "COLORGEN генерация цвета"
+    },
+    "COLORR извлечь Красный": {
+        "prefix": "colorr",
+        "body": [
+            "COLORR(${1:255})"
+        ],
+        "description": "COLORR извлечь Красный"
+    },
+    "COLORG извлечь Зеленый": {
+        "prefix": "colorg",
+        "body": [
+            "COLORG(${1:255})"
+        ],
+        "description": "COLORG извлечь Зеленый"
+    },
+    "COLORB извлечь Синий": {
+        "prefix": "colorb",
+        "body": [
+            "COLORB(${1:255})"
+        ],
+        "description": "COLORB извлечь Синий"
+    },
+
+    "SCREENSHOT вывод снимка всего экрана из буфера в файл": {
+        "prefix": "screenshot",
+        "body": [
+            "SCREENSHOT",
+            "$0"
+        ],
+        "description": "SCREENSHOT вывод снимка всего экрана из буфера в файл"
+    },
+    "SCREENSHOTEX сохранить буфер в файл с названием": {
+        "prefix": "screenshotex",
+        "body": [
+            "SCREENSHOTEX(${1:0},${2:0}, ${3:\\$_xmax},${4:\\$_ymax}, \"${5:Image_}\", ${6:0})",
+            "$0"
+        ],
+        "description": "SCREENSHOTEX сохранить буфер в файл с названием"
+    },
+    "SCREENSHOTFIX сохранить буфер в фиксированный файл": {
+        "prefix": "screenshotfix",
+        "body": [
+            "SCREENSHOTFIX(${1:0},${2:0}, ${3:\\$_xmax},${4:\\$_ymax}, \"${5:C:\\file.bmp}\", ${6:0})",
+            "$0"
+        ],
+        "description": "SCREENSHOTFIX сохранить буфер в фиксированный файл"
+    },
 }

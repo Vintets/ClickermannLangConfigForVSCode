@@ -195,3 +195,173 @@ $_time_str
 
 
 // Graphics
+GETSCREEN(0, 0, 400, 400)
+COLORMODE(7, 10, 10, 400, 400)
+CONTRAST(4, 10, 10, 400, 400)
+
+IF_PIXEL_IN(0,0, $_xmax,$_ymax, 255)
+    LCLICK($_return1, $_return2)
+    WAITMS(100)
+END_IF
+IF_PICTURE_IN(0,0, $_xmax,$_ymax, "file.bmp", -1, 95)
+    LCLICK($_return1, $_return2)
+    WAITMS(100)
+END_IF
+
+PXL(10, 10)
+IF(PXL(10, 10) = 255)
+    // body
+END_IF
+
+SCANPXL($arr, 0,0, $_xmax,$_ymax, 255)
+SCANPICTURE($arr, 0,0, $_xmax,$_ymax, "pict.bmp", -1, 100)
+
+
+// SCANPXL (шаблон) найти все пикселы
+GETSCREEN(0, 0, $_xmax, $_ymax)
+SCANPXL($scan, 0,0, $_xmax,$_ymax, 255)
+$SHIFT_X = 1  // смещение (кол-во игнор пикселов после найденного)
+$SHIFT_Y = 1
+$scan_size = ARRSIZE($scan)
+FOR($i=0, $i < $scan_size, 2)
+    $X = $scan[$i]
+    $Y = $scan[$i + 1]
+    IF(($X > $X2) | ($Y > $Y2))
+        $X2 = $X + $SHIFT_X
+        $Y2 = $Y + $SHIFT_Y
+        MOVE($X, $Y)  // действие
+        INC($scan_count, 1)
+        LOGWRITE("X: ", $X, " Y: ", $Y)
+        WAITMS(100)
+    END_IF
+END_CYC
+UNDEFINE($scan)
+
+LOGWRITE("=====================")
+LOGWRITE("Всего найдено: ", $scan_count)
+
+
+// SCANPICTURE FOR (шаблон) найти все картинки
+GETSCREEN(0, 0, $_xmax, $_ymax)
+SCANPICTURE($scan, 0,0, $_xmax,$_ymax, "pict.bmp", -1, 100)
+$scan_size = ARRSIZE($scan)
+FOR($i=0, $i < $scan_size, 2)
+    $X = $scan[$i]
+    $Y = $scan[$i + 1]
+    MOVE($X, $Y)  // действие
+    LOGWRITE("X: ", $X, " Y: ", $Y)
+    WAITMS(100)
+END_CYC
+UNDEFINE($scan)
+
+
+// SCANPICTURE WHILE (шаблон) найти все картинки
+GETSCREEN(0, 0, $_xmax, $_ymax)
+SCANPICTURE($scan, 0,0, $_xmax,$_ymax, "pict.bmp", -1, 100)
+$ARR_NUM = 0
+WHILE($ARR_NUM < ARRSIZE($scan))
+    $X = $scan[$ARR_NUM]
+    $Y = $scan[$ARR_NUM + 1]
+    INC($ARR_NUM, 2)
+    MOVE($X, $Y)  // действие
+    LOGWRITE("X: ", $X, " Y: ", $Y)
+    WAITMS(100)
+END_CYC
+UNDEFINE($scan)
+
+
+// IF_PICTURE_IN ожидание картинки (шаблон)
+$found = 0
+WHILE($found = 0)
+    GETSCREEN(0, 0, $_xmax, $_ymax)
+    IF_PICTURE_IN(0,0, $_xmax,$_ymax, "pict.bmp", -1, 100)
+        $found = 1
+        LCLICK($_return1, $_return2)
+        WAITMS(100)
+    ELSE
+        WAITMS(300)
+    END_IF
+END_CYC
+
+
+// IF_PICTURE_IN ожидание картинки с таймером (шаблон)
+$time = $_time_t + 10
+WHILE($time > $_time_t)
+    GETSCREEN(0, 0, $_xmax, $_ymax)
+    IF_PICTURE_IN(0,0, $_xmax,$_ymax, "pict.bmp", -1, 100)
+        $time = 0
+        LCLICK($_return1, $_return2)
+        WAITMS(100)
+    ELSE
+        WAITMS(300)
+    END_IF
+END_CYC
+IF($time ! 0)
+    LOGWRITE("время истекло, картинка не найдена")
+END_IF
+
+
+// IF_PICTURE_IN ожидание картинки с таймером ms (шаблон)
+$time = $_ms + 10000
+WHILE($time > $_ms)
+    GETSCREEN(0, 0, $_xmax, $_ymax)
+    IF_PICTURE_IN(0,0, $_xmax,$_ymax, "pict.bmp", -1, 100)
+        $time = 0
+        LCLICK($_return1, $_return2)
+        WAITMS(100)
+    ELSE
+        WAITMS(300)
+    END_IF
+END_CYC
+IF($time ! 0)
+    LOGWRITE("время истекло, картинка не найдена")
+END_IF
+
+
+// PXL ожидание цвета (шаблон)
+GETSCREEN(100, 200, 100, 200)
+WHILE(PXL(100, 200) ! 255)
+    WAITMS(100)
+    GETSCREEN(100, 200, 100, 200)
+END_CYC
+
+
+// PXL ожидание цвета таймер (шаблон)
+$time = $_ms + 30000
+GETSCREEN(100, 200, 100, 200)
+WHILE((PXL(100, 200) ! 255) & ($time > $_ms))
+    WAITMS(100)
+    GETSCREEN(100, 200, 100, 200)
+END_CYC
+IF($time ! 0)
+    LOGWRITE("время истекло, цвет не появился")
+END_IF
+
+
+// IF_PIXEL_IN ожидание цвета (шаблон)
+$found = 0
+WHILE($found = 0)
+    GETSCREEN(0, 0, $_xmax, $_ymax)
+    IF_PIXEL_IN(0,0, $_xmax,$_ymax, 255)
+        $found = 1
+        LCLICK($_return1, $_return2)
+        WAITMS(100)
+    ELSE
+        WAITMS(300)
+    END_IF
+END_CYC
+
+
+PXLCOUNT(10,10, $_xmax,$_ymax, 255)
+PXLXOR(10,10, $_xmax,$_ymax)
+PXLCRC(10,10, $_xmax,$_ymax)
+PXLREPLACE(10,10, $_xmax,$_ymax, $oldcolor, $newcolor)
+
+COLORGEN(255, 255, 255)
+COLORR(255)
+COLORG(255)
+COLORB(255)
+
+SCREENSHOT
+SCREENSHOTEX(0,0, $_xmax,$_ymax, "Image_", 0)
+SCREENSHOTFIX(0,0, $_xmax,$_ymax, "C:\file.bmp", 0)
