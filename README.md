@@ -19,16 +19,20 @@
 > 4.14.003b
 
 
-## Setup
+## Installation
 
-Копируем папку<br />
+Запускаем файл `install.bat`
+
+
+### Manual installation
+Для ручной установки, копируем папку<br />
 - `clickermann.vscode` <br />
 - в раздел <br />`%USERPROFILE%\.vscode\extensions` <br />
 - Restart VS Code <br />
 - Profit!
 
 
-### Setup snippets
+### Manual installation snippets
 
 можно установить сниппеты отдельно, без установки подсветки синтаксиса
 скопировать файл
@@ -44,7 +48,7 @@
 
 ### Optionts
 
-дополнительные настройки добавить в файл глобальных настроек VS Code
+дополнительные настройки - добавить в файл глобальных настроек VS Code
 `%APPDATA%\Code\User\settings.json`
 
 ```json
@@ -53,7 +57,7 @@
         "files.encoding": "utf8bom",
         "files.autoGuessEncoding": true
     }
-    // hастройка отображения сниппетов
+    // hастройка отображения сниппетов (сниппеты вверху)
     "editor.snippetSuggestions": "top",  // inline/top/bottom/none
 ```
 
