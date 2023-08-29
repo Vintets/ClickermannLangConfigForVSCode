@@ -163,7 +163,7 @@
     "LOGSHOW": {
         "prefix": ["logshow", "лог показать"],
         "body": [
-            "LOGSHOW(1, ${1:100},${2:100})",
+            "LOGSHOW(1, ${1:100}, ${2:100})",
             "$0"
         ],
         "description": "LOGSHOW"
@@ -184,8 +184,16 @@
         ],
         "description": "LOGWRITE"
     },
+    "LOGWRITEC color": {
+        "prefix": ["logwritec", "printc", "вывод в лог цветной"],
+        "body": [
+            "LOGWRITEC(\"$1\", ${2:433934})",
+            "$0"
+        ],
+        "description": "LOGWRITEC color"
+    },
     "Log1 (шаблон)": {
-        "prefix": ["logwrite", "print", "вывод в лог", "log1"],
+        "prefix": ["logwrite log1", "print log1", "вывод в лог"],
         "body": [
             "LOGWRITE(\"X/Y  \", \\$_return1, \" / \", \\$_return2)",
             "$0"
@@ -193,7 +201,7 @@
         "description": "Log1 (шаблон)"
     },
     "Log2 (шаблон)": {
-        "prefix": ["logwrite", "print", "вывод в лог", "log2"],
+        "prefix": ["logwrite log2", "print log2", "вывод в лог"],
         "body": [
             "LOGWRITE(\"X=\", \\$_return1, \" Y=\", \\$_return2)",
             "$0"

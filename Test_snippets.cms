@@ -81,6 +81,7 @@ LOGSHOW(1, 100,100)
 LOGCLEAR
 
 LOGWRITE("")
+LOGWRITEC("", 433934)
 LOGWRITE("X/Y  ", $_return1, " / ", $_return2)
 LOGWRITE("X=", $_return1, " Y=", $_return2)
 
