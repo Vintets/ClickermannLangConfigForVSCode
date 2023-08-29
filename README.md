@@ -60,11 +60,20 @@
 
 ## Screenshots
 
-ver 4.14.003b page 1<br />
-![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_2023-08-23_17-29-24_screenshot_1.png)
+ver 4.14.003b<br />
+![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_2023-08-23_17-27-53_screenshot_1.png)
 
-ver 4.14.003b page 2<br />
-![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_2023-08-23_17-27-53_screenshot_2.png)
+Theme Dark +<br />
+![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_Theme_Dark+_2023-08-23_screenshot_2.png)
+
+Theme Monokai +<br />
+![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_Theme_Monokai_2023-08-29_screenshot_4.png)
+
+Theme Light +<br />
+![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_Theme_Light+_2023-08-29_screenshot_3.png)
+
+Theme Quiet Light<br />
+![Скриншот работы скрипта](https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/screenshots/Clickermann.vscode_Theme_Quiet_Light_2023-08-29_screenshot_5.png)
 
 
 ## License
