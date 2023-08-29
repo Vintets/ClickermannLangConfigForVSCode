@@ -142,4 +142,21 @@ WHEELDOWN(3)
 WHEELUP(3)
 
 
+// Other
+GOTO(skip)
+HALT(1)
+EXECUTE("some.bat")
+GETFILELIST($arr, "C:\*.*")
+GETDIRLIST($arr, "C:\*")
+HTTPGET("url")
+CALL("plugin_example.dll", 5, 2, 3)
+CALLARR("plugin_example.dll", $arr)
+$var = READMEM(2080, 0x0006F2B7, 4)
+WRITEMEM(2080, 0x0006F2B7, 5000, 4)
+
+$input = INPUTBOX("message", "10", 10)
+$dialog = DIALOGBOX("Продолжить действие", 1, 2)
+$res = RADIOBOX("Выберете пункт", "1 Мясо", "2 Птица", "3 Рыба")
+
+
 // Graphics

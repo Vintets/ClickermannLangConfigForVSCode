@@ -489,5 +489,170 @@
         "description": "WHEELUP Крутить колесо вверх"
     },
 
+    // Other
+    "GOTO Переход к метке": {
+        "prefix": ["goto", "переход к метке"],
+        "body": [
+            "GOTO(${1:skip})",
+            "$0"
+        ],
+        "description": "GOTO Переход к метке"
+    },
+    "HALT Стоп [и закрыть кликер]": {
+        "prefix": ["halt", "переход к метке"],
+        "body": [
+            "HALT${1:(1)}",
+            "$0"
+        ],
+        "description": "HALT Стоп [и закрыть кликер]"
+    },
+    "EXECUTE запускает внешний файл": {
+        "prefix": ["execute", "запустить файл"],
+        "body": [
+            "EXECUTE(\"${1:some.bat}\")",
+            "$0"
+        ],
+        "description": "EXECUTE запускает внешний файл"
+    },
+    "GETFILELIST список файлов в массив": {
+        "prefix": ["getfilelist", "список файлов"],
+        "body": [
+            "GETFILELIST(\\$${1:arr}, \"${2:C:\\*.*}\")",
+            "$0"
+        ],
+        "description": "GETFILELIST список файлов в массив"
+    },
+    "GETDIRLIST список каталогов в массив": {
+        "prefix": ["getdirlist", "список каталогов"],
+        "body": [
+            "GETDIRLIST(\\$${1:arr}, \"${2:C:\\*}\")",
+            "$0"
+        ],
+        "description": "GETDIRLIST список каталогов в массив"
+    },
+    "HTTPGET Web-запрос": {
+        "prefix": ["httpget", "web-запрос"],
+        "body": [
+            "HTTPGET(\"${1:url}\")",
+            "$0"
+        ],
+        "description": "HTTPGET Web-запрос"
+    },
+    "CALL Вызов плагина": {
+        "prefix": ["call", "вызов плагина"],
+        "body": [
+            "CALL(\"${1:plugin_example}.dll\", ${2:5, 2, 3})",
+            "$0"
+        ],
+        "description": "CALL Вызов плагина"
+    },
+    "CALLARR Вызов плагина": {
+        "prefix": ["callarr", "вызов плагина массив"],
+        "body": [
+            "CALLARR(\"${1:plugin_example}.dll\", \\$${2:arr})",
+            "$0"
+        ],
+        "description": "CALLARR Вызов плагина"
+    },
+    "READMEM целое значение из памяти процесса": {
+        "prefix": ["readmem", "целое значение из памяти"],
+        "body": [
+            "\\$${1:var} = READMEM(${2:2080}, ${3:0x0006F2B7}, ${4:4})",
+            "$0"
+        ],
+        "description": "READMEM целое значение из памяти процесса"
+    },
+    "WRITEMEM целое значение в память процесса": {
+        "prefix": ["writemem", "целое значение в память процесса"],
+        "body": [
+            "WRITEMEM(${1:2080}, ${2:0x0006F2B7}, ${3:5000}, ${4:4})",
+            "$0"
+        ],
+        "description": "WRITEMEM целое значение в память процесса"
+    },
+    "INPUTBOX Диалоговое окно ввода строки": {
+        "prefix": ["inputbox", "диалоговое окно строка"],
+        "body": [
+            "\\$${1:input} = INPUTBOX(\"${2:message}\", \"${3:10}\", ${4:10})",
+            "$0"
+        ],
+        "description": "INPUTBOX Диалоговое окно ввода строки"
+    },
+    "DIALOGBOX Диалоговое окно с кнопками": {
+        "prefix": ["dialogbox", "диалоговое окно кнопки"],
+        "body": [
+            "\\$${1:dialog} = DIALOGBOX(\"${2:Продолжить действие}\", ${3:1}, ${4:2})",
+            "$0"
+        ],
+        "description": "DIALOGBOX Диалоговое окно с кнопками"
+    },
+    "RADIOBOX Диалоговое окно с переключателями": {
+        "prefix": ["radiobox", "диалоговое окно переключатель"],
+        "body": [
+            "\\$${1:res} = RADIOBOX(\"${2:Выберете пункт}\", \"${3:1 Мясо}\", \"${4:2 Птица}\", \"${5:3 Рыба}\")",
+            "$0"
+        ],
+        "description": "RADIOBOX Диалоговое окно с переключателями"
+    },
+
+    // Service variables
+    "$_xmouse Координата мыши X": {
+        "prefix": "$_xmouse",
+        "body": [
+            "\\$_xmouse"
+        ],
+        "description": "$_xmouse Координата мыши X"
+    },
+    "$_ymouse Координата мыши Y": {
+        "prefix": "$_ymouse",
+        "body": [
+            "\\$_ymouse"
+        ],
+        "description": "$_ymouse Координата мыши Y"
+    },
+    "$_xmin Экран минимум X": {
+        "prefix": "$_xmin",
+        "body": [
+            "\\$_xmin"
+        ],
+        "description": "$_xmin Экран минимум X"
+    },
+    "$_ymin Экран минимум Y": {
+        "prefix": "$_ymin",
+        "body": [
+            "\\$_ymin"
+        ],
+        "description": "$_ymin Экран минимум Y"
+    },
+    "$_xmax Экран максимум (Ширина) X": {
+        "prefix": "$_xmax",
+        "body": [
+            "\\$_xmax"
+        ],
+        "description": "$_xmax Экран максимум (Ширина) X"
+    },
+    "$_ymax Экран максимум (Высота) Y": {
+        "prefix": "$_ymax",
+        "body": [
+            "\\$_ymax"
+        ],
+        "description": "$_ymax Экран максимум (Высота) Y"
+    },
+    "$_return1 1-й результат функции": {
+        "prefix": "$_return1",
+        "body": [
+            "\\$_return1"
+        ],
+        "description": "$_return1 1-й результат функции"
+    },
+    "$_return2 2-й результат функции": {
+        "prefix": "$_return2",
+        "body": [
+            "\\$_return2"
+        ],
+        "description": "$_return2 2-й результат функции"
+    },
+
+
     // Graphics
 }
