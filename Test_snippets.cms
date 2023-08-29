@@ -368,3 +368,31 @@ SCREENSHOTFIX(0,0, $_xmax,$_ymax, "C:\file.bmp", 0)
 
 
 // Computing
+RND(1, 5)
+RNDFROM(1, 3, 5)
+DIST(10, 10, 100, 200)
+INT(25.5)
+ROUND(25.5, 0)
+SIN(45)
+COS(45)
+ARCSIN(45)
+ARCCOS(45)
+SQRT(4)
+POW(4, 2)
+ABS(-9)
+
+
+// Variables, Arrays
+DEFINE($var, 0)
+UNDEFINE($var)
+SETVAR("$var", 1)
+GETVAR("$var")
+INC($var, 1)
+CHAR(65)
+CODE("A")
+
+ARRPUSH($arr, 123)
+ARRPOP($var)
+ARRSIZE($var)
+ARRSORT($var)
+STRSEPARATE("1:2:3:4,", ":", $var)

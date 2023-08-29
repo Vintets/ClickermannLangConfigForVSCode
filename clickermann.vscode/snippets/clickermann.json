@@ -269,7 +269,7 @@
         "description": "#autorun"
     },
     "#define": {
-        "prefix": ["define", "макрос"],
+        "prefix": ["define #", "макрос"],
         "body": [
             "#define ${1:find}:${2:replace}",
             "$0"
@@ -1230,6 +1230,99 @@
         ],
         "description": "ABS модуль числа"
     },
+
+    // Variables, Arrays
+    "DEFINE объявить переменную": {
+        "prefix": "define",
+        "body": [
+            "DEFINE(\\$${1:var}, ${2:0})"
+        ],
+        "description": "DEFINE объявить переменную"
+    },
+    "UNDEFINE удалить переменную": {
+        "prefix": "undefine",
+        "body": [
+            "UNDEFINE(\\$${1:var})"
+        ],
+        "description": "UNDEFINE удалить переменную"
+    },
+    "SETVAR присваивает значение переменной по ее имени": {
+        "prefix": "setvar",
+        "body": [
+            "SETVAR(\"\\$${1:var}\", ${2:1})"
+        ],
+        "description": "SETVAR присваивает значение переменной по ее имени"
+    },
+    "GETVAR возвращает значение переменной по ее имени": {
+        "prefix": "getvar",
+        "body": [
+            "GETVAR(\"\\$${1:var}\")"
+        ],
+        "description": "GETVAR возвращает значение переменной по ее имени"
+    },
+    "INC изменение значения переменной": {
+        "prefix": "INC",
+        "body": [
+            "INC(\\$${1:var}, ${2:1})"
+        ],
+        "description": "INC изменение значения переменной"
+    },
+    "CHAR возвращает символ по его коду": {
+        "prefix": "char",
+        "body": [
+            "CHAR(${1:65})"
+        ],
+        "description": "CHAR возвращает символ по его коду"
+    },
+    "CODE возвращает код, соответствующий символу": {
+        "prefix": "code",
+        "body": [
+            "CODE(\"${1:A}\")"
+        ],
+        "description": "CODE возвращает код, соответствующий символу"
+    },
+
+    "ARRPUSH добавить элемент в конец массива": {
+        "prefix": "arrpush",
+        "body": [
+            "ARRPUSH(\\$${1:arr}, ${2:123})",
+            "$0"
+        ],
+        "description": "ARRPUSH добавить элемент в конец массива"
+    },
+    "ARRPOP извлечь из массива последний элемент": {
+        "prefix": "arrpop",
+        "body": [
+            "ARRPOP(\\$${1:var})",
+            "$0"
+        ],
+        "description": "ARRPOP извлечь из массива последний элемент"
+    },
+    "ARRSIZE размер массива": {
+        "prefix": "arrsize",
+        "body": [
+            "ARRSIZE(\\$${1:var})"
+        ],
+        "description": "ARRSIZE размер массива"
+    },
+    "ARRSORT сортировать элементы массива": {
+        "prefix": "arrsort",
+        "body": [
+            "ARRSORT(\\$${1:var})",
+            "$0"
+        ],
+        "description": "ARRSORT сортировать элементы массива"
+    },
+    "STRSEPARATE разбивает строку на подстроки в массив": {
+        "prefix": "strseparate",
+        "body": [
+            "STRSEPARATE(\"${2:1:2:3:4},\", \":\", \\$${1:var})",
+            "$0"
+        ],
+        "description": "STRSEPARATE разбивает строку на подстроки в массив"
+    },
+
+    // 
 
 
 }
