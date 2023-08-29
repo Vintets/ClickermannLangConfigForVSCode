@@ -388,11 +388,31 @@ UNDEFINE($var)
 SETVAR("$var", 1)
 GETVAR("$var")
 INC($var, 1)
-CHAR(65)
-CODE("A")
 
 ARRPUSH($arr, 123)
 ARRPOP($var)
 ARRSIZE($var)
 ARRSORT($var)
 STRSEPARATE("1:2:3:4,", ":", $var)
+
+
+// Strings
+STRMD5("string")
+CHAR(65)
+CODE("A")
+FROMCLIP()
+TOCLIP("string")
+
+STRLEN("string")
+STRCUT("string", 1, 3)
+STRCUT2("string", 1, 3)
+STRFILTER("string", "set", 0)
+STRPOS("string", "substr")
+STRCONCAT("str1", "str2")
+STRREPLACE("string", "substr1", "substr2")
+
+
+// Files
+
+
+// WinAPI

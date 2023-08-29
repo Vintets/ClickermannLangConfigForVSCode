@@ -1267,20 +1267,6 @@
         ],
         "description": "INC изменение значения переменной"
     },
-    "CHAR возвращает символ по его коду": {
-        "prefix": "char",
-        "body": [
-            "CHAR(${1:65})"
-        ],
-        "description": "CHAR возвращает символ по его коду"
-    },
-    "CODE возвращает код, соответствующий символу": {
-        "prefix": "code",
-        "body": [
-            "CODE(\"${1:A}\")"
-        ],
-        "description": "CODE возвращает код, соответствующий символу"
-    },
 
     "ARRPUSH добавить элемент в конец массива": {
         "prefix": "arrpush",
@@ -1322,7 +1308,96 @@
         "description": "STRSEPARATE разбивает строку на подстроки в массив"
     },
 
-    // 
+    // Strings
+    "STRMD5 md5 хеш строки": {
+        "prefix": "strmd5",
+        "body": [
+            "STRMD5(\"${1:string}\")"
+        ],
+        "description": "STRMD5 md5 хеш строки"
+    },
+    "CHAR возвращает символ по его коду": {
+        "prefix": "char",
+        "body": [
+            "CHAR(${1:65})"
+        ],
+        "description": "CHAR возвращает символ по его коду"
+    },
+    "CODE возвращает код, соответствующий символу": {
+        "prefix": "code",
+        "body": [
+            "CODE(\"${1:A}\")"
+        ],
+        "description": "CODE возвращает код, соответствующий символу"
+    },
+    "FROMCLIP чтение буфера": {
+        "prefix": "fromclip",
+        "body": [
+            "FROMCLIP()"
+        ],
+        "description": "FROMCLIP чтение буфера"
+    },
+    "TOCLIP запись в буфер": {
+        "prefix": "toclip",
+        "body": [
+            "TOCLIP(\"${1:string}\")",
+            "$0"
+        ],
+        "description": "TOCLIP запись в буфер"
+    },
 
+    "STRLEN длина строки": {
+        "prefix": "strlen",
+        "body": [
+            "STRLEN(\"${1:string}\")"
+        ],
+        "description": "STRLEN длина строки"
+    },
+    "STRCUT подстрока": {
+        "prefix": "strcut",
+        "body": [
+            "STRCUT(\"${1:string}\", ${2:1}, ${3:3})"
+        ],
+        "description": "STRCUT подстрока"
+    },
+    "STRCUT2 подстрока": {
+        "prefix": "strcut2",
+        "body": [
+            "STRCUT2(\"${1:string}\", ${2:1}, ${3:3})"
+        ],
+        "description": "STRCUT2 подстрока"
+    },
+    "STRFILTER фильтр строки": {
+        "prefix": "strfilter",
+        "body": [
+            "STRFILTER(\"${1:string}\", \"${2:set}\", ${3:0})"
+        ],
+        "description": "STRFILTER фильтр строки"
+    },
+    "STRPOS позиция подстроки": {
+        "prefix": "strpos",
+        "body": [
+            "STRPOS(\"${1:string}\", \"${2:substr}\")"
+        ],
+        "description": "STRPOS позиция подстроки"
+    },
+    "STRCONCAT объединнение строк": {
+        "prefix": "strconcat",
+        "body": [
+            "STRCONCAT(\"${1:str1}\", \"${2:str2}\")"
+        ],
+        "description": "STRCONCAT объединнение строк"
+    },
+    "STRREPLACE замена подстроки": {
+        "prefix": "strreplace",
+        "body": [
+            "STRREPLACE(\"${1:string}\", \"${2:substr1}\", \"${3:substr2}\")"
+        ],
+        "description": "STRREPLACE замена подстроки"
+    },
+
+    // Files
+
+    // WinAPI
 
 }
