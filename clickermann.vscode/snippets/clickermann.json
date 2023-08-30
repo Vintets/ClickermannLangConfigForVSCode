@@ -514,22 +514,6 @@
         ],
         "description": "EXECUTE запускает внешний файл"
     },
-    "GETFILELIST список файлов в массив": {
-        "prefix": ["getfilelist", "список файлов"],
-        "body": [
-            "GETFILELIST(\\$${1:arr}, \"${2:C:\\*.*}\")",
-            "$0"
-        ],
-        "description": "GETFILELIST список файлов в массив"
-    },
-    "GETDIRLIST список каталогов в массив": {
-        "prefix": ["getdirlist", "список каталогов"],
-        "body": [
-            "GETDIRLIST(\\$${1:arr}, \"${2:C:\\*}\")",
-            "$0"
-        ],
-        "description": "GETDIRLIST список каталогов в массив"
-    },
     "HTTPGET Web-запрос": {
         "prefix": ["httpget", "web-запрос"],
         "body": [
@@ -1397,6 +1381,162 @@
     },
 
     // Files
+    "GETFILELIST список файлов в массив": {
+        "prefix": ["getfilelist", "список файлов"],
+        "body": [
+            "GETFILELIST(\\$${1:arr}, \"${2:C:\\*.*}\")",
+            "$0"
+        ],
+        "description": "GETFILELIST список файлов в массив"
+    },
+    "GETDIRLIST список каталогов в массив": {
+        "prefix": ["getdirlist", "список каталогов"],
+        "body": [
+            "GETDIRLIST(\\$${1:arr}, \"${2:C:\\*}\")",
+            "$0"
+        ],
+        "description": "GETDIRLIST список каталогов в массив"
+    },
+
+    "TFREAD чтение из файла": {
+        "prefix": "tfread",
+        "body": [
+            "TFREAD(\"${1:input.txt}\", ${2:1})"
+        ],
+        "description": "TFREAD чтение из файла"
+    },
+    "TFWRITE запись в файл": {
+        "prefix": "tfwrite",
+        "body": [
+            "TFWRITE(\"${1:input.txt}\", \"${2:string}\")",
+            "$0"
+        ],
+        "description": "TFWRITE запись в файл"
+    },
+    "TFREADARR считывает массив из файла": {
+        "prefix": "tfreadarr",
+        "body": [
+            "TFREADARR(\"${1:file.txt}\", \\$${2:arr})",
+            "$0"
+        ],
+        "description": "TFREADARR считывает массив из файла"
+    },
+    "TFWRITEARR записывает массив в файл": {
+        "prefix": "tfwritearr",
+        "body": [
+            "TFWRITEARR(\"${1:file.txt}\", \\$${2:arr})",
+            "$0"
+        ],
+        "description": "TFWRITEARR записывает массив в файл"
+    },
+    "TFCOUNT количество строк в файле": {
+        "prefix": "tfcount",
+        "body": [
+            "TFCOUNT(\"${1:file.txt}\")"
+        ],
+        "description": "TFCOUNT количество строк в файле"
+    },
+    "TFDELETE удаление строки из файла": {
+        "prefix": "tfdelete",
+        "body": [
+            "TFDELETE(\"${1:file.txt}\", ${2:1})",
+            "$0"
+        ],
+        "description": "TFDELETE удаление строки из файла"
+    },
+    "TFCLEAR очищает файл": {
+        "prefix": "tfclear",
+        "body": [
+            "TFCLEAR(\"${1:file.txt}\", ${2:0})",
+            "$0"
+        ],
+        "description": "TFCLEAR очищает файл"
+    },
+    "STRREADLN чтение из файла": {
+        "prefix": "strreadln",
+        "body": [
+            "STRREADLN(\"${1:file.txt}\", ${2:1})"
+        ],
+        "description": "STRREADLN чтение из файла"
+    },
+    "STRWRITELN запись в файл": {
+        "prefix": "strwriteln",
+        "body": [
+            "STRWRITELN(\"${1:file.txt}\", ${2:1})",
+            "$0"
+        ],
+        "description": "STRWRITELN запись в файл"
+    },
+    "INIREAD считывает параметр из INI файла": {
+        "prefix": "iniread",
+        "body": [
+            "INIREAD(\"${1:config.ini}\", \"${2:parname}\", \"${3:SECTION1}\")"
+        ],
+        "description": "INIREAD считывает параметр из INI файла"
+    },
+    "INIWRITE записывает параметр в INI файл": {
+        "prefix": "iniwrite",
+        "body": [
+            "INIWRITE(\"${1:config.ini}\", \"${2:parname}\", \"${3:value}\", \"${4:SECTION1}\")",
+            "$0"
+        ],
+        "description": "INIWRITE записывает параметр в INI файл"
+    },
+    "FREADDATA считывает блок из файла в байтовый массив": {
+        "prefix": "freaddata",
+        "body": [
+            "FREADDATA(\"${1:C:\\mypath\\myfile.txt}\", \\$${2:arr}, ${3:0}, ${4:10})",
+            "$0"
+        ],
+        "description": "FREADDATA считывает блок из файла в байтовый массив"
+    },
+    "FWRITEDATA записывает блок в файл из байтового массива": {
+        "prefix": "fwritedata",
+        "body": [
+            "FWRITEDATA(\"${1:C:\\mypath\\myfile.txt}\", \\$${2:arr})",
+            "$0"
+        ],
+        "description": "FWRITEDATA записывает блок в файл из байтового массива"
+    },
+
+    "FCREATE создает пустой файл или каталог": {
+        "prefix": "fcreate",
+        "body": [
+            "FCREATE(\"${1:C:\\mypath\\myfile.txt}\", ${2:1})",
+            "$0"
+        ],
+        "description": "FCREATE создает пустой файл или каталог"
+    },
+    "FCOPY копирует файл или каталог": {
+        "prefix": "fcopy",
+        "body": [
+            "FCOPY(\"${1:C:\\mypath}\", \"${2:C:\\mypath2}\")",
+            "$0"
+        ],
+        "description": "FCOPY копирует файл или каталог"
+    },
+    "FDELETE удаляет файл или каталог": {
+        "prefix": "fdelete",
+        "body": [
+            "FDELETE(\"${1:C:\\mypath}\")",
+            "$0"
+        ],
+        "description": "FDELETE удаляет файл или каталог"
+    },
+    "FEXISTS проверяет существования файла или каталога": {
+        "prefix": "fexists",
+        "body": [
+            "FEXISTS(\"${1:C:\\mypath\\myfile.txt}\")"
+        ],
+        "description": "FEXISTS проверяет существования файла или каталога"
+    },
+    "FSIZE возвращает размер файла": {
+        "prefix": "fsize",
+        "body": [
+            "FSIZE(\"${1:C:\\mypath\\myfile.txt}\")"
+        ],
+        "description": "FSIZE возвращает размер файла"
+    },
 
     // WinAPI
 

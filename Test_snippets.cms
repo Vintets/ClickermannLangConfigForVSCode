@@ -146,8 +146,6 @@ WHEELUP(3)
 GOTO(skip)
 HALT(1)
 EXECUTE("some.bat")
-GETFILELIST($arr, "C:\*.*")
-GETDIRLIST($arr, "C:\*")
 HTTPGET("url")
 CALL("plugin_example.dll", 5, 2, 3)
 CALLARR("plugin_example.dll", $arr)
@@ -413,6 +411,27 @@ STRREPLACE("string", "substr1", "substr2")
 
 
 // Files
+GETFILELIST($arr, "C:\*.*")
+GETDIRLIST($arr, "C:\*")
+TFREAD("input.txt", 1)
+TFWRITE("input.txt", "string")
+TFREADARR("file.txt", $arr)
+TFWRITEARR("file.txt", $arr)
+TFCOUNT("file.txt")
+TFDELETE("file.txt", 1)
+TFCLEAR("file.txt", 0)
+STRREADLN("file.txt", 1)
+STRWRITELN("file.txt", 1)
+INIREAD("config.ini", "parname", "SECTION1")
+INIWRITE("config.ini", "parname", "value", "SECTION1")
+FREADDATA("C:\mypath\myfile.txt", $arr, 0, 10)
+FWRITEDATA("C:\mypath\myfile.txt", $arr)
+
+FCREATE("C:\mypath\myfile.txt", 1)
+FCOPY("C:\mypath", "C:\mypath2")
+FDELETE("C:\mypath")
+FEXISTS("C:\mypath\myfile.txt")
+FSIZE("C:\mypath\myfile.txt")
 
 
 // WinAPI
