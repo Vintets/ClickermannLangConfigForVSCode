@@ -20,6 +20,7 @@
     "categories": [
         "Programming Languages",
         "Formatters",
+        "Snippets",
         "Other"
     ],
     "contributes": {
