@@ -1539,5 +1539,122 @@
     },
 
     // WinAPI
+    "HGET возвращает HWND по координатам": {
+        "prefix": "hget",
+        "body": [
+            "HGET(${1:10}, ${2:10})"
+        ],
+        "description": "HGET возвращает HWND по координатам"
+    },
+    "HSET Вкл/Выкл оконного режима": {
+        "prefix": "hset",
+        "body": [
+            "HSET(${1:12345}, ${2:1})",
+            "$0"
+        ],
+        "description": "HSET Вкл/Выкл оконного режима"
+    },
+    "HGETPID возвращает PID процесса по HWND": {
+        "prefix": "hgetpid",
+        "body": [
+            "HGETPID(${1:12345})"
+        ],
+        "description": "HGETPID возвращает PID процесса по HWND"
+    },
+    "HGETTEXT возвращает текст на элементе": {
+        "prefix": "hgettext",
+        "body": [
+            "HGETTEXT(${1:12345})"
+        ],
+        "description": "HGETTEXT возвращает текст на элементе"
+    },
+    "HSETTEXT записывает текст на элемент": {
+        "prefix": "hsettext",
+        "body": [
+            "HSETTEXT(${1:12345}, \"${2:text}\")",
+            "$0"
+        ],
+        "description": "HSETTEXT записывает текст на элемент"
+    },
 
+    "WNDFIND поиск окна по заголовку": {
+        "prefix": "wndfind",
+        "body": [
+            "WNDFIND(\"${1:Заголовок окна}\", ${2:0})"
+        ],
+        "description": "WNDFIND поиск окна по заголовку"
+    },
+    "WNDPOS перемещает окно": {
+        "prefix": "wndpos",
+        "body": [
+            "WNDPOS(${1:12345}, ${2:10}, ${3:10})",
+            "$0"
+        ],
+        "description": "WNDPOS перемещает окно"
+    },
+    "WNDSIZE устанавливает размер окна": {
+        "prefix": "wndsize",
+        "body": [
+            "WNDSIZE(${1:12345}, ${2:10}, ${3:10})",
+            "$0"
+        ],
+        "description": "WNDSIZE устанавливает размер окна"
+    },
+    "WNDSTATE сворачивает/разворачивает окно": {
+        "prefix": "wndstate",
+        "body": [
+            "WNDSTATE(${1:12345}, ${2:1})",
+            "$0"
+        ],
+        "description": "WNDSTATE сворачивает/разворачивает окно"
+    },
+    "WNDGETINFO получает инф-цию об окне": {
+        "prefix": "wndgetinfo",
+        "body": [
+            "WNDGETINFO(${1:12345}, \\$${2:win_x}, \\$${3:win_y}, \\$${4:win_w}, \\$${5:win_h})",
+            "$0"
+        ],
+        "description": "WNDGETINFO получает инф-цию об окне"
+    },
+    "WNDSETINFO обновляет инф-цию об окне": {
+        "prefix": "wndsetinfo",
+        "body": [
+            "WNDSETINFO(${1:12345}, \\$${2:win_x}, \\$${3:win_y}, \\$${4:win_w}, \\$${5:win_h})",
+            "$0"
+        ],
+        "description": "WNDSETINFO обновляет инф-цию об окне"
+    },
+    "WNDBUMP помещает окно на передний план": {
+        "prefix": "wndbump",
+        "body": [
+            "WNDBUMP(${1:12345})",
+            "$0"
+        ],
+        "description": "WNDBUMP помещает окно на передний план"
+    },
+
+    "SENDMESSAGE системное сообщение окну": {
+        "prefix": "sendmessage",
+        "body": [
+            "SENDMESSAGE(${1:12345}, ${2:123}, \\$${3:wParam}, \\$${4:lParam})",
+            "$0"
+        ],
+        "description": "SENDMESSAGE системное сообщение окну"
+    },
+    "POSTMESSAGE системное сообщение окну": {
+        "prefix": "postmessage",
+        "body": [
+            "POSTMESSAGE(${1:12345}, ${2:123}, \\$${3:wParam}, \\$${4:lParam})",
+            "$0"
+        ],
+        "description": "POSTMESSAGE системное сообщение окну"
+    },
+    "GETMESSAGE принимает сообщение 1024, кликеру": {
+        "prefix": "getmessage",
+        "body": [
+            "GETMESSAGE(\\$${1:wParam}, \\$${2:lParam}, \\$${3:isnew})",
+            "$0"
+        ],
+        "description": "GETMESSAGE принимает сообщение 1024, кликеру"
+    }
 }

@@ -435,3 +435,20 @@ FSIZE("C:\mypath\myfile.txt")
 
 
 // WinAPI
+HGET(10, 10)
+HSET(12345, 1)
+HGETPID(12345)
+HGETTEXT(12345)
+HSETTEXT(12345, "text")
+
+WNDFIND("Заголовок окна", 0)
+WNDPOS(12345, 10, 10)
+WNDSIZE(12345, 10, 10)
+WNDSTATE(12345, 1)
+WNDGETINFO(12345, $win_x, $win_y, $win_w, $win_h)
+WNDSETINFO(12345, $win_x, $win_y, $win_w, $win_h)
+WNDBUMP(12345)
+
+SENDMESSAGE(12345, 123, $wParam, $lParam)
+POSTMESSAGE(12345, 123, $wParam, $lParam)
+GETMESSAGE($wParam, $lParam, $isnew)
