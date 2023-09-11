@@ -39,6 +39,25 @@ https://translated.turbopages.org/proxy_u/en-ru.ru.8af8b454-64d9cd6d-f7fddbaa-74
 
 
 # ==================================================================================================
+            *** Запись GIF demo ***
+
+init / (header)
+new script
+
+#define
+
+halt
+
+
+
+sub
+timer ms
+
+strseparate
+
+getscreen
+if_picture_in
+$_xmouse, $_ymouse
 
 
 
