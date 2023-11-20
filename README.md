@@ -56,7 +56,7 @@
     "[clickermann]": {
         "files.encoding": "utf8bom",
         "files.autoGuessEncoding": true
-    }
+    },
     // hастройка отображения сниппетов (сниппеты вверху)
     "editor.snippetSuggestions": "top",  // inline/top/bottom/none
 ```
