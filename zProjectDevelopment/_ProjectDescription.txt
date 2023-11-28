@@ -1,7 +1,7 @@
 
             *** ClickermannConfigLangForVSCode 4.14.003b***
 
-Кидаем папку clickermann.vscode в раздел %USERPROFILE%\.vscode\extensions
+Кидаем папку vintets.clickermann в раздел %USERPROFILE%\.vscode\extensions
 +Restart Code
 Profit!
 
