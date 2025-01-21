@@ -4,7 +4,7 @@
 <br />
 <div align="center">
 <a href="#readme" target="_blank">
-<img src="https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/clickermann.vscode/images/Clickermann-v4_Mainicon.svg" height="128" width="128"/>
+<img src="https://github.com/Vintets/ClickermannLangConfigForVSCode/raw/master/vintets.clickermann/images/Clickermann-v4_Mainicon.svg" height="128" width="128"/>
 </a>
 </div>
 
@@ -26,7 +26,7 @@
 
 ### Manual installation
 Для ручной установки, копируем папку<br />
-- `clickermann.vscode` <br />
+- `vintets.clickermann` <br />
 - в раздел <br />`%USERPROFILE%\.vscode\extensions` <br />
 - Restart VS Code <br />
 - Profit!
@@ -36,14 +36,19 @@
 
 можно установить сниппеты отдельно, без установки подсветки синтаксиса
 скопировать файл
-`clickermann.vscode\snippets\clickermann.json`
+`vintets.clickermann\snippets\clickermann.json`
 в
 `%APPDATA%\Code\User\snippets\`
 
 Альтернативный вариант:<br />
 - F1 -->> Configure User Snippets -->> Clickermann<br />
 - File -->> Settings -->> Configure User Snippets -->> Clickermann<br />
-- и вставляем код из `clickermann.vscode\snippets\clickermann.json` <br />
+- и вставляем код из `vintets.clickermann\snippets\clickermann.json` <br />
+
+
+## Reinstallation
+
+> **_NOTE:_** Если расширение Clickermann удалили в расширениях, то до установки необходимо перезапустить VSCode (в этот момент он выполнит задачу удаления папки с расширением). После чего устанавливать любым указанным выше способом.
 
 
 ### Optionts
@@ -56,7 +61,7 @@
     "[clickermann]": {
         "files.encoding": "utf8bom",
         "files.autoGuessEncoding": true
-    }
+    },
     // hастройка отображения сниппетов (сниппеты вверху)
     "editor.snippetSuggestions": "top",  // inline/top/bottom/none
 ```

@@ -1,8 +1,8 @@
 @echo off
 @color 3E
 
-@xcopy ".\clickermann.vscode" "%USERPROFILE%\.vscode\extensions\clickermann.vscode\" /E /Y
-REM robocopy ".\clickermann.vscode" "%USERPROFILE%\.vscode\extensions\clickermann.vscode\" /COPYALL /E
+@xcopy ".\vintets.clickermann" "%USERPROFILE%\.vscode\extensions\vintets.clickermann\" /E /Y
+REM robocopy ".\vintets.clickermann" "%USERPROFILE%\.vscode\extensions\vintets.clickermann\" /COPYALL /E
 
 @echo.
 @echo ═════ Файлы настроек скопированы в VS Code ═════
