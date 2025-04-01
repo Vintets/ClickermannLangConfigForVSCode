@@ -1,6 +1,6 @@
 ﻿#name "Test_snippets"
 // Author: Vint
-// Version: 0.1 (24.08.2023)
+// Version: 1.1 (01.04.2025)
 // Скрипт для Clickermann v4.13.014
 
 //                              Настройки
@@ -143,6 +143,8 @@ WHEELUP(3)
 
 
 // Other
+WAIT(5)
+WAITMS(20)
 GOTO(skip)
 HALT(1)
 EXECUTE("some.bat")
