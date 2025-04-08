@@ -1,0 +1,194 @@
+{
+    "name": "Запуск через Clickermann",
+    "version": "2.0.0",
+    "authot": "Vintets",
+    // "[markdown]": {
+    "tasks": [
+        // taskkill ********************************************************************************
+        // задача для taskkill & запуска Clickermann v4.13
+        {
+            "label": "Clickermann v4.13 +taskkill",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C",
+                    ]
+                },
+            },
+            "command": "taskkill /T /FI \"imagename eq clickermann*\" && \"${env:Clickermann413}\"",
+            "args": [
+                "${relativeFile}"
+                // "${File}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": "**/*.cms",
+             },
+            "presentation": {
+                            "echo": true,
+                            "reveal": "always",
+                            "focus": false,
+                            "panel": "shared",
+                            "showReuseMessage": false,
+                            "clear": true
+                            }
+        },
+        // задача для taskkill & запуска Clickermann v4.14
+        {
+            "label": "Clickermann v4.14 +taskkill",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C",
+                    ]
+                },
+            },
+            "command": "taskkill /T /FI \"imagename eq clickermann*\" && \"${env:Clickermann414}\"",
+            "args": [
+                "${relativeFile}"
+                // "${File}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": "**/*.cms",
+             },
+            "presentation": {
+                            "echo": true,
+                            "reveal": "always",
+                            "focus": false,
+                            "panel": "shared",
+                            "showReuseMessage": false,
+                            "clear": true
+                            }
+        },
+        // задача для taskkill & запуска Clickermann v4.13x64
+        {
+            "label": "Clickermann v4.13x64 +taskkill",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C",
+                    ]
+                },
+            },
+            "command": "taskkill /T /FI \"imagename eq clickermann*\" && \"${env:Clickermann413x64}\"",
+            "args": [
+                "${relativeFile}"
+                // "${File}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": "**/*.cms",
+             },
+            "presentation": {
+                            "echo": true,
+                            "reveal": "always",
+                            "focus": false,
+                            "panel": "shared",
+                            "showReuseMessage": false,
+                            "clear": true
+                            }
+        },
+
+        // only run ********************************************************************************
+        // задача для запуска Clickermann v4.13
+        {
+            "label": "Clickermann v4.13",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C",
+                    ]
+                },
+            },
+            "command": "${env:Clickermann413}",
+            // "command": "D:\\YandexDisk\\Clickermann v4.13.14x32\\Clickermann v4.13.14x32.exe",
+            "args": [
+                "${relativeFile}"
+                // "${File}"
+            ],
+            // "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": "**/*.cms",
+             },
+            "presentation": {
+                            "echo": true,
+                            "reveal": "always",
+                            "focus": false,
+                            //  "panel": "dedicated",
+                            "panel": "shared",
+                            "showReuseMessage": false,
+                            "clear": true
+                            }
+        },
+        // задача для запуска Clickermann v4.14
+        {
+            "label": "Clickermann v4.14",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C",
+                    ]
+                },
+            },
+            "command": "${env:Clickermann414}",
+            "args": [
+                "${relativeFile}"
+                // "${File}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": "**/*.cms",
+             },
+            "presentation": {
+                            "echo": true,
+                            "reveal": "always",
+                            "focus": false,
+                            "panel": "shared",
+                            "showReuseMessage": false,
+                            "clear": true
+                            }
+        },
+        // задача для запуска Clickermann v4.13x64
+        {
+            "label": "Clickermann v4.13x64",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/C",
+                    ]
+                },
+            },
+            "command": "${env:Clickermann413x64}",
+            "args": [
+                "${relativeFile}"
+                // "${File}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": "**/*.cms",
+             },
+            "presentation": {
+                            "echo": true,
+                            "reveal": "always",
+                            "focus": false,
+                            "panel": "shared",
+                            "showReuseMessage": false,
+                            "clear": true
+                            }
+        },
+    ]
+}

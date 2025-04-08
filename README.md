@@ -67,6 +67,32 @@
 ```
 
 
+## Open script in Clickermann
+
+Установите расширение Task Runner в VSCode.
+Теперь каждая задача, которую вы добавляете в tasks.json будет отображаться в виде кнопки на панели «Task runner» (которая обычно находится на той же вкладке, что и проводник).
+Task Runner - это всего лишь удобная запускалка механизма задач встроенных в VSCode. Можно и без неё запускать через Command Palette.
+
+В терминале, добавить переменные окружения с путями нужных версий Кликермена (можно добавить в `install.bat`)
+имя переменной сохраняем, путь прописываем свой
+```cmd
+setx /M Clickermann413 "Полный_Путь_К_Clickermann.exe"
+```
+
+мой пример:
+```cmd
+setx /M Clickermann413 "D:\YandexDisk\Clickermann v4.13.14x32\Clickermann v4.13.14x32.exe"
+setx /M Clickermann414 "D:\YandexDisk\Clickermann v4.14.003b x32\Clickermann v4.14.003b x32.exe"
+setx /M Clickermann413x64 "D:\YandexDisk\Clickermann v4.13.14x64\Clickermann v4.13.14x64.exe"
+```
+
+Если вы хотите, чтобы задачи запуска были задачами проекта, поместите файл tasks.json в каталог вашего проекта в папку с именем .vscode (туда же, куда кладёте settings.json)  
+```.vscode\tasks.json```
+
+Если вы хотите, чтобы это были глобальные задачи / задачи пользователя, поместите файл tasks.json в  
+```%APPDATA%\Code\User\tasks.json```
+
+
 ## Screenshots
 
 ver 4.14.003b<br />
