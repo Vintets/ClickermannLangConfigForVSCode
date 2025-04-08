@@ -8,15 +8,12 @@
     //     ""
     // ],
 
-    // --- Git Bash
-    // "terminal.integrated.shellArgs.windows": ["--cd=C:/Server/data/htdocs/flask_blog/app"]
-    // "terminal.integrated.shellArgs.windows": [
-    // "--cd=C:/Server/data/htdocs/flask_blog/app",
-    // "-c",
-    // "source C:/Server/venv_flask3/Scripts/activate"
-    // "python main.py"
-    // ],
-
+    // удалять завершающие пробелы
+    // "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+        // "files.trimFinalNewlines": false,
+        "files.trimTrailingWhitespace": false
+    },
 
     "window.zoomLevel": 0,
     //"files.autoSaveDelay": 1000,
@@ -30,17 +27,24 @@
         "**/*.ico": true,
         "**/*.bat": true,
         "**/*.exe": true,
+        "**/*.lnk": true,
         "**/*.png": true,
         "**/*.jpg": true,
         "**/*.webm": true,
         "**/*.xlsx": true,
         "**/*.docx": true,
+        "**/*.pdf": true,
+        "**/*.csv": true,
         "**/*.xml": true,
         "**/*.mp4": true,
         "**/*.mkv": true,
+        "**/*.avi": true,
         "**/*.wav": true,
         "**/*.mp3": true,
         "**/*.m4a": true,
+        "**/*.zip": true,
+        "**/*.7z": true,
+        "**/*.rar": true,
         "zProjectDevelopment/": true,
         "**/LICENSE": true,
     },
@@ -50,17 +54,25 @@
         "**/*.ico": true,
         "**/*.bat": true,
         "**/*.exe": true,
+        "**/*.lnk": true,
         "**/*.png": true,
         "**/*.jpg": true,
+        "**/*.bmp": true,
         "**/*.webm": true,
         "**/*.xlsx": true,
         "**/*.docx": true,
+        "**/*.pdf": true,
+        "**/*.csv": true,
         "**/*.xml": true,
         "**/*.mp4": true,
         "**/*.mkv": true,
+        "**/*.avi": true,
         "**/*.wav": true,
         "**/*.mp3": true,
         "**/*.m4a": true,
+        "**/*.zip": true,
+        "**/*.7z": true,
+        "**/*.rar": true,
         "zProjectDevelopment/": true,
         "**/LICENSE": true,
     },
