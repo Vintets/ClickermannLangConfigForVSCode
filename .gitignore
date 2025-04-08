@@ -21,15 +21,16 @@ Thumbs.db
 /logs/
 
 # Other files
-*_old*
-*_backup*
-*.jpg
-*.webm
-*.mp4
-*.mkv
-*.wav
-*.mp3
-*.m4a
-*.exe
+**/*_old*
+**/*_backup*
+**/*.jpg
+**/*.webm
+**/*.mp4
+**/*.mkv
+**/*.wav
+**/*.mp3
+**/*.m4a
+**/*.exe
+**/*.lnk
 !/zProjectDevelopment/_ProjectDescription.txt
 !/screenshots/*_screenshot_*.png
