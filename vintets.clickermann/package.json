@@ -48,7 +48,17 @@
         "snippets": [{
             "language": "clickermann",
             "path": "./snippets/clickermann.json"
-        }]
+        }],
+        "menus": {
+            "editor/title/run": [
+                {
+                    "when": "resourceLangId == markdown",
+                    "command": "markdown.showPreview",
+                    "alt": "markdown.showPreviewToSide",
+                    "group": "navigation"
+                }
+            ]
+        }
     },
     "license": "MIT",
     "repository": {
